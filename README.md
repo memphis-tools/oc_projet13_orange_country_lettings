@@ -5,6 +5,8 @@
 
 Site web d'Orange County Lettings
 
+![Orange Country Lettings](orange_country_lettings.png)
+
 ## Développement local
 
 ### Prérequis
