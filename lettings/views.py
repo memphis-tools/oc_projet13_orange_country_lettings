@@ -24,19 +24,3 @@ def letting(request, letting_id):
         "address": letting.address,
     }
     return render(request, "lettings/letting.html", context)
-
-
-def handler404(request, exception):
-    # error_code = 404
-    # return render(request, 'error.html', context={"error_code": error_code})
-    """
-    Page not found Error 404
-    """
-    response = render_to_response('error.html',context_instance=RequestContext(request))
-    response.status_code = 404
-    return response
-
-
-def handler500(request):
-    error_code = 500
-    return render(request, 'error.html', context={"error_code": error_code})
