@@ -3,21 +3,40 @@ from django.shortcuts import render
 from .models import Letting
 
 
-# Aenean leo magna, vestibulum et tincidunt fermentum, consectetur quis velit. Sed non placerat massa. Integer est nunc, pulvinar a
-# tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras eget scelerisque
 def index(request):
+    """Return the template named lettings/index.html
+    which is the index for lettings sub-application."""
     lettings_list = Letting.objects.all()
-    context = {'lettings_list': lettings_list}
-    return render(request, 'lettings/index.html', context)
+    context = {"lettings_list": lettings_list}
+    return render(request, "lettings/index.html", context)
 
 
-#Cras ultricies dignissim purus, vitae hendrerit ex varius non. In accumsan porta nisl id eleifend. Praesent dignissim, odio eu consequat pretium, purus urna vulputate arcu, vitae efficitur
-#  lacus justo nec purus. Aenean finibus faucibus lectus at porta. Maecenas auctor, est ut luctus congue, dui enim mattis enim, ac condimentum velit libero in magna. Suspendisse potenti. In tempus a nisi sed laoreet.
-# Suspendisse porta dui eget sem accumsan interdum. Ut quis urna pellentesque justo mattis ullamcorper ac non tellus. In tristique mauris eu velit fermentum, tempus pharetra est luctus. Vivamus consequat aliquam libero, eget bibendum lorem. Sed non dolor risus. Mauris condimentum auctor elementum. Donec quis nisi ligula. Integer vehicula tincidunt enim, ac lacinia augue pulvinar sit amet.
 def letting(request, letting_id):
+    """Return the template named lettings/letting.html
+    which is the detail view of letting instance.
+    Keyword arguments:
+    request -- default Django object
+    letting_id -- integer, id of the letting instance
+    """
     letting = Letting.objects.get(id=letting_id)
     context = {
-        'title': letting.title,
-        'address': letting.address,
+        "title": letting.title,
+        "address": letting.address,
     }
-    return render(request, 'lettings/letting.html', context)
+    return render(request, "lettings/letting.html", context)
+
+
+def handler404(request, exception):
+    # error_code = 404
+    # return render(request, 'error.html', context={"error_code": error_code})
+    """
+    Page not found Error 404
+    """
+    response = render_to_response('error.html',context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    error_code = 500
+    return render(request, 'error.html', context={"error_code": error_code})
