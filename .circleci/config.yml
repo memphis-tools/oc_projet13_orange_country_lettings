@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
+          pip-dependency-file: ./oc_projet13/requirements.txt
           pkg-manager: pip
       - run:
           name: Run Tests
