@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: django_on_render
+    name: oc_lettings_site
     plan: free
     region: frankfurt
     runtime: python
