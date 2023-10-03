@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            python -m coverage run -m pytest
+            python -m coverage run -m pytest ./oc_projet13
             python -m coveralls
   build-and-test:
     docker:
@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            python -m coverage run -m pytest
+            python -m coverage run -m pytest ./oc_projet13
             python -m coverage report
             python -m coverage html
       - store_artifacts:
