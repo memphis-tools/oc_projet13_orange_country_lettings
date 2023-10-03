@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: django_on_render
+    plan: free
+    region: frankfurt
+    runtime: python
+    buildCommand: "./docker-compose-deployment.sh cloud"
+    startCommand: "./venv/bin/python -m gunicorn -b :8000 django_on_render.wsgi:application"
+    envVars:
+      - fromGroup: oc_projet13

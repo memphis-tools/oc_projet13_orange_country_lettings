@@ -1,4 +1,5 @@
 ![Screenshot](https://img.shields.io/badge/python-v3.10-blue?logo=python&logoColor=yellow)
+![Screenshot](https://img.shields.io/badge/render--blue?logo=render&logoColor=yellow)
 ![Screenshot](https://img.shields.io/badge/betterstack--blue)
 ![Screenshot](https://img.shields.io/badge/circleci--blue?logo=circleci&logoColor=yellow)
 [![Coverage Status](https://coveralls.io/repos/github/memphis-tools/oc_projet13_orange_country_lettings/badge.svg?branch=fonctionnalite/circleci_ci_cd)](https://coveralls.io/github/memphis-tools/oc_projet13_orange_country_lettings?branch=fonctionnalite/circleci_ci_cd)
@@ -12,11 +13,19 @@ Site web d'Orange County Lettings
 
 ![Orange Country Lettings](orange_country_lettings.png)
 
+## Développement cloud
+
+⛩️ (en cours)
+
 ## Développement local
 
 ### Prérequis
 
 - Compte GitHub avec accès en lecture à ce repository
+- Compte DockerHub pour déposer une image
+- Compte Betterstack avec un API token valide (concerne la collecte de log)
+- Compte Coveralls avec un API token valide (concerne les tests, la mise à jour du taux couverture)
+- Compte Render avec le Blueprint connecté au dépôt github et un Env group.
 - Git CLI
 - SQLite3 CLI
 - Interpréteur Python, version 3.6 ou supérieure
@@ -42,50 +51,52 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
 - Pour désactiver l'environnement, `deactivate`
 
-
 #### Mettre à jour les variables d'environnement
 
-  Vous devez créer un fichier .envrc avec les variables suivantes.
+  On met à jour le PATH pour la seule exécution en locale.
 
-    SECRET_KEY='MakeYourOwnSecretKey'
+  Créer un fichier .envrc avec les variables suivantes (à adapter avec vos identifiants):
 
-    BETTERSTACK_SOURCE_TOKEN='SuperTokenFromBetterStack'
+    export BETTERSTACK_SOURCE_TOKEN='SuperTokenFromBetterStack'
+    export COVERALLS_REPO_TOKEN=SuperTokenFromCoveralls
+    export SECRET_KEY='MakeYourOwnSecretKey'
+    export DJANGO_ALLOWED_HOSTS='localhost,127.0.0.1'
+    export DEBUG=0
 
-  Pour créer votre propre "secret key":
+  Ajouter les variables au PATH courant:
 
-    >>> import secrets
-    >>> secrets.token_hex()
-    'e2b4968b3f0172325702bbfa292d0d99b07bee22e3ab312e5855beb9151a379d'
-
-  Les 2 variables seront chargées depuis le fichier 'settings.py'.
+    `source .envrc`
 
   Noter que le logger est déclaré dans le fichier "logtail_handler.py".
-
 
 #### Exécuter le site
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
+- `pip install --requirement ./oc_projet13/requirements.txt`
 - `python manage.py runserver`
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
 
 #### Linting
 
-- `cd /path/to/Python-OC-Lettings-FR`
+- `cd /path/to/Python-OC-Lettings-FR/`
 - `source venv/bin/activate`
+- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
 - `flake8`
 
 #### Tests unitaires
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
+- `cd /path/to/Python-OC-Lettings-FR/`
+- `source venv/b-in/activate`
+- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
 - `pytest`
 
 #### Base de données
 
-- `cd /path/to/Python-OC-Lettings-FR`
+- `cd /path/to/Python-OC-Lettings-FR/`
+- `source venv/b-in/activate`
+- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
 - Ouvrir une session shell `sqlite3`
 - Se connecter à la base de données `.open oc-lettings-site.sqlite3`
 - Afficher les tables dans la base de données `.tables`
@@ -96,7 +107,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 #### Panel d'administration
 
-- Aller sur `http://localhost:8000/admin`
+- Aller sur l'url suivante (dans le cas d'un test en local): `http://localhost:8000/admin`
 - Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
 
 ### Windows
