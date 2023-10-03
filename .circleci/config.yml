@@ -20,9 +20,9 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            ls -la /home/circleci/.local/bin/
-            ls /home/circleci/.local/
-
+            /home/circleci/.local/bin/poetry run coverage -m pytest
+            /home/circleci/.local/bin/poetry run coverage report
+            /home/circleci/.local/bin/poetry run coverage html
       - store_artifacts:
           path: htmlcov
 
