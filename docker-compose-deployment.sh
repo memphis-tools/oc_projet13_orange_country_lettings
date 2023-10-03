@@ -21,7 +21,7 @@ function update_application {
   docker-compose -f docker-compose.dev.yml exec web python manage.py collectstatic --no-input --clear
 }
 
-
+# Exécution conditionnelle nasée sur les arguments fournis.
 if [ ${#args[@]} -eq 0 ]
 then
   display_arg_error
@@ -48,6 +48,9 @@ else
         esac
         ;;
     "cloud" )
+        # Création d'un environnement virtuel qui pourra être utilisé par Render
+        python -m venv venv
+        source venv/bin/activate
         docker pull $IMAGE_NAME:oc_projet13_orange_country_lettings_web
         docker pull $IMAGE_NAME:oc_projet13_orange_country_lettings_nginx
         docker-compose -f docker-compose.prod.yml up -d
