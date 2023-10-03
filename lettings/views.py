@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .models import Letting
 import logtail_handler
+import socket
 
 
 LOGGER = logtail_handler.logger
+LOCAL_IP = socket.gethostbyname(socket.gethostname())
 
 
 def index(request):
@@ -11,7 +13,7 @@ def index(request):
     which is the index for lettings sub-application."""
     try:
         lettings_list = Letting.objects.all()
-        context = {"lettings_list": lettings_list}
+        context = {"lettings_list": lettings_list, "user_ip": LOCAL_IP}
         return render(request, "lettings/index.html", context)
     except Exception:
         message = "Error - Page 'lettings/index.html' not found"
@@ -30,6 +32,7 @@ def letting(request, letting_id):
         context = {
             "title": letting.title,
             "address": letting.address,
+            "user_ip": LOCAL_IP
         }
         return render(request, "lettings/letting.html", context)
     except Exception:
