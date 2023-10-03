@@ -1,8 +1,7 @@
 import pytest
 from django.db.models.query import QuerySet
-from django.http import HttpResponse
 from django.test import Client
-from django.urls import reverse, resolve
+from django.urls import reverse
 from django.urls.exceptions import NoReverseMatch
 from lettings.models import Address, Letting
 import logtail_handler
@@ -43,6 +42,5 @@ def test_letting_detail_view(get_dummy_db):
 
 @pytest.mark.django_db
 def test_unknow_letting_detail_view(get_dummy_db):
-    client = Client()
     with pytest.raises(NoReverseMatch):
-        path = reverse('lettingxyz', kwargs={"letting_id": "1"})
+        reverse('lettingxyz', kwargs={"letting_id": "1"})
