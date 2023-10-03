@@ -20,9 +20,9 @@ jobs:
       - run:
         name: Run Tests
         command: |
-          $HOME/.local/bin/coverage run -m pytest
-          $HOME/.local/bin/coverage report
-          $HOME/.local/bin/coverage html
+          /home/circleci/.local/bin/coverage run -m pytest
+          /home/circleci/.local/bin/coverage report
+          /home/circleci/.local/bin/coverage html
       - store_artifacts:
           path: htmlcov
 
