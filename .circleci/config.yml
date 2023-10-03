@@ -18,8 +18,8 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-        name: Run Tests
-        command: ls /home/
+          name: Run Tests
+          command: ls /home/
   
       - store_artifacts:
           path: htmlcov
