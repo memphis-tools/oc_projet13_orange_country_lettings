@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  web:
+    image: memphistools/public_repo:oc_projet13_orange_country_lettings_web
+    command:
+      sh -c "gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - static_volume:/home/oc_projet13/web/staticfiles
+    expose:
+      - 8000
+    environment:
+      - DEBUG
+      - SECRET_KEY
+      - DJANGO_ALLOWED_HOSTS
+      - SQL_ENGINE
+      - SQL_DATABASE
+      - SQL_USER
+      - SQL_PASSWORD
+      - SQL_HOST
+      - SQL_PORT
+      - DATABASE
+
+  nginx:
+    image: memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+    volumes:
+      - static_volume:/home/oc_projet13/web/staticfiles
+    ports:
+      - 5555:8080
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
