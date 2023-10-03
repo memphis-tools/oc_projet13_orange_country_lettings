@@ -4,6 +4,5 @@ services:
     plan: free
     region: frankfurt
     runtime: python
-    startCommand: "./venv/bin/python -m gunicorn -b :8000 django_on_render.wsgi:application"
     envVars:
       - fromGroup: oc_projet13
