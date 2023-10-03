@@ -1,14 +1,21 @@
 from django.shortcuts import render
-
 from .models import Letting
+import logtail_handler
+
+
+LOGGER = logtail_handler.logger
 
 
 def index(request):
     """Return the template named lettings/index.html
     which is the index for lettings sub-application."""
-    lettings_list = Letting.objects.all()
-    context = {"lettings_list": lettings_list}
-    return render(request, "lettings/index.html", context)
+    try:
+        lettings_list = Letting.objects.all()
+        context = {"lettings_list": lettings_list}
+        return render(request, "lettings/index.html", context)
+    except Exception:
+        message = "Error - Page 'lettings/index.html' not found"
+        LOGGER.error(message)
 
 
 def letting(request, letting_id):
@@ -18,9 +25,13 @@ def letting(request, letting_id):
     request -- default Django object
     letting_id -- integer, id of the letting instance
     """
-    letting = Letting.objects.get(id=letting_id)
-    context = {
-        "title": letting.title,
-        "address": letting.address,
-    }
-    return render(request, "lettings/letting.html", context)
+    try:
+        letting = Letting.objects.get(id=letting_id)
+        context = {
+            "title": letting.title,
+            "address": letting.address,
+        }
+        return render(request, "lettings/letting.html", context)
+    except Exception:
+        message = f"Error - Page {letting_id} not found"
+        LOGGER.error(message)

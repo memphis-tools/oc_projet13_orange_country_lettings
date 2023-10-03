@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from pathlib import Path
 
@@ -114,3 +115,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# variables personnalisées
+BETTERSTACK_SOURCE_TOKEN = os.environ.get("BETTERSTACK_SOURCE_TOKEN")
