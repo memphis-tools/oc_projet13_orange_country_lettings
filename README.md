@@ -1,3 +1,8 @@
+![Screenshot](https://img.shields.io/badge/python-v3.10-blue?logo=python&logoColor=yellow)
+![Screenshot](https://img.shields.io/badge/betterstack--blue)
+![Screenshot](https://img.shields.io/badge/circleci--blue?logo=circleci&logoColor=yellow)
+[![Coverage Status](https://coveralls.io/repos/github/memphis-tools/oc_projet13_orange_country_lettings/badge.svg?branch=fonctionnalite/circleci_ci_cd)](https://coveralls.io/github/memphis-tools/oc_projet13_orange_country_lettings?branch=fonctionnalite/circleci_ci_cd)
+
 # [OpenClassRoom](https://openclassrooms.com/) - Parcours développeur Python
 ![Screenshot](oc_parcours_dev_python.png)
 
