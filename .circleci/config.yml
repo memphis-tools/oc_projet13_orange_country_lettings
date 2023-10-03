@@ -36,6 +36,14 @@ jobs:
           # app-dir: ~/project/package-directory/  # If your requirements.txt isn't in the root directory.
           # pip-dependency-file: test-requirements.txt  # if you have a different name for your requirements file, maybe one that combines your runtime and test requirements.
       - run:
-          name: Run tests
-          # This assumes pytest is installed via the install-package step above
-          command: pytest
+        name: Run Tests
+        command: |
+          $HOME/.local/bin/coverage run -m pytest
+          $HOME/.local/bin/coverage report
+          $HOME/.local/bin/coverage html  # open htmlcov/index.html in a browser
+      - store_artifacts:
+          path: htmlcov
+
+      - run:
+          name: Run flake8
+          command: flake8
