@@ -18,6 +18,7 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
+<<<<<<< HEAD
         name: Run Tests
         command: |
           ls /home/
@@ -25,6 +26,13 @@ jobs:
           /home/circleci/.local/bin/coverage run -m pytest
           /home/circleci/.local/bin/coverage report
           /home/circleci/.local/bin/coverage html
+=======
+          name: Run Tests
+          command: |
+            /home/circleci/.local/bin/coverage run -m pytest
+            /home/circleci/.local/bin/coverage report
+            /home/circleci/.local/bin/coverage html
+>>>>>>> 582a3e90b6472dd500a737274cd568034cc07538
       - store_artifacts:
           path: htmlcov
 
