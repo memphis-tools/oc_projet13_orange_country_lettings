@@ -37,6 +37,26 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
 - Pour désactiver l'environnement, `deactivate`
 
+
+#### Mettre à jour les variables d'environnement
+
+  Vous devez créer un fichier .envrc avec les variables suivantes.
+
+    SECRET_KEY='MakeYourOwnSecretKey'
+
+    BETTERSTACK_SOURCE_TOKEN='SuperTokenFromBetterStack'
+
+  Pour créer votre propre "secret key":
+
+    >>> import secrets
+    >>> secrets.token_hex()
+    'e2b4968b3f0172325702bbfa292d0d99b07bee22e3ab312e5855beb9151a379d'
+
+  Les 2 variables seront chargées depuis le fichier 'settings.py'.
+
+  Noter que le logger est déclaré dans le fichier "logtail_handler.py".
+
+
 #### Exécuter le site
 
 - `cd /path/to/Python-OC-Lettings-FR`
@@ -78,5 +98,5 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 Utilisation de PowerShell, comme ci-dessus sauf :
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
+- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1`
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
