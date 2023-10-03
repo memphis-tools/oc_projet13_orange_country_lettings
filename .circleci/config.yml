@@ -19,8 +19,8 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run Tests
-          command: ls /home/
-  
+          command: ls /home/circleci/.local/
+
       - store_artifacts:
           path: htmlcov
 
