@@ -5,7 +5,11 @@ from django.test import Client
 from django.urls import reverse, resolve
 from django.urls.exceptions import NoReverseMatch
 from lettings.models import Address, Letting
-import json
+import logtail_handler
+
+
+LOGGER = logtail_handler.logger
+
 
 @pytest.mark.django_db
 def test_address_model(get_dummy_db):
