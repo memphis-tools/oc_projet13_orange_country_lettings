@@ -11,6 +11,7 @@ class Profile(models.Model):
     The __str__ methods returns a string representation based on 1 attribute:
     username.
     """
+
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="new_user_profile"
     )

@@ -22,19 +22,20 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            coverage run -m pytest
-            coveralls
+            python -m coverage run -m pytest ./oc_projet13
+            python -m coveralls
   build-and-test:
     docker:
       - image: cimg/python:3.10.5
     steps:
       - checkout
       - python/install-packages:
+          pip-dependency-file: ./oc_projet13/requirements.txt
           pkg-manager: pip
       - run:
           name: Run Tests
           command: |
-            python -m coverage run -m pytest
+            python -m coverage run -m pytest ./oc_projet13
             python -m coverage report
             python -m coverage html
       - store_artifacts:

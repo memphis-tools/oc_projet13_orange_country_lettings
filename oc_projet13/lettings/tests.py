@@ -27,7 +27,7 @@ def test_letting_model(get_dummy_db):
 @pytest.mark.django_db
 def test_lettings_index_view():
     client = Client()
-    path = reverse('lettings_index', kwargs={})
+    path = reverse("lettings_index", kwargs={})
     response = client.get(path)
     assert isinstance(response.context["lettings_list"], QuerySet)
 
@@ -35,7 +35,7 @@ def test_lettings_index_view():
 @pytest.mark.django_db
 def test_letting_detail_view(get_dummy_db):
     client = Client()
-    path = reverse('letting', kwargs={"letting_id": "1"})
+    path = reverse("letting", kwargs={"letting_id": "1"})
     response = client.get(path)
     assert "Un site historique à revoir" == response.context["title"]
 
@@ -43,4 +43,4 @@ def test_letting_detail_view(get_dummy_db):
 @pytest.mark.django_db
 def test_unknow_letting_detail_view(get_dummy_db):
     with pytest.raises(NoReverseMatch):
-        reverse('lettingxyz', kwargs={"letting_id": "1"})
+        reverse("lettingxyz", kwargs={"letting_id": "1"})

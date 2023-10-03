@@ -8,6 +8,7 @@ class Address(models.Model):
     The __str__ methods returns a string representation based on 2 attributes:
     number and title.
     """
+
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
     city = models.CharField(max_length=64)
@@ -25,6 +26,7 @@ class Address(models.Model):
         """
         We set a Meta class in order to have a correct display for "Addresses".
         """
+
         verbose_name = "Address"
         verbose_name_plural = "Addresses"
 
@@ -35,6 +37,7 @@ class Letting(models.Model):
     The __str__ methods returns a string representation based on 1 attribute:
     title.
     """
+
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
 
