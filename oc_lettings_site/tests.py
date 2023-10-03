@@ -1,7 +1,7 @@
 import pytest
 from django.test.client import RequestFactory
 from django.contrib.auth.models import User
-from django.conf.urls import handler404, handler500
+from django.conf.urls import handler404
 
 from django.urls import reverse, resolve
 from django.test import Client
@@ -13,6 +13,7 @@ def test_index_url():
     path = reverse('index', kwargs={})
     response = client.get(path)
     assert path == "/"
+    assert response.status_code == 200
     assert resolve(path).view_name == "index"
 
 
@@ -29,7 +30,7 @@ def test_lettings_url():
 @pytest.mark.django_db
 def test_lettings_detail_url(get_dummy_db):
     client = Client()
-    path = reverse('letting', kwargs={'letting_id':1})
+    path = reverse('letting', kwargs={'letting_id': 1})
     response = client.get(path)
     assert path == "/lettings/1/"
     assert response.status_code == 200
@@ -50,7 +51,7 @@ def test_profiles_url():
 def test_profiles_detail_url(get_dummy_db):
     client = Client()
     user = User.objects.get(id=1)
-    path = reverse('profile', kwargs={'username':user.username})
+    path = reverse('profile', kwargs={'username': user.username})
     response = client.get(path)
     assert path == f"/profiles/{user.username}/"
     assert response.status_code == 200
@@ -59,7 +60,6 @@ def test_profiles_detail_url(get_dummy_db):
 
 @pytest.mark.django_db
 def test_dummy_404_url():
-    client = Client()
     factory = RequestFactory()
     request = factory.get('/farine/ble')
     response = handler404(request, "")

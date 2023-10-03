@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import handler404, handler500
 
 from . import views
 
@@ -9,6 +8,7 @@ import lettings
 import profiles
 import lettings.views
 import profiles.views
+
 
 urlpatterns = [
     path("", views.index, name="index"),

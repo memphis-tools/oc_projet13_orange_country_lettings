@@ -17,14 +17,12 @@ def index(request):
 def handler404(request, exception):
     """Return a custom 400 error HTML page."""
     context = {"error_code": 400, "request": request}
-    message = f"Erreur - Page {request} non trouvée"
     LOGGER.error(context)
     return render(request, 'error.html', context=context)
 
 
 def handler500(request):
     """Return a custom 500 error HTML page."""
-    context={"error_code": 500, "request": request}
-    message = f"Erreur - Page {request} non trouvée"
+    context = {"error_code": 500, "request": request}
     LOGGER.error(context)
     return render(request, 'error.html', context=context)
