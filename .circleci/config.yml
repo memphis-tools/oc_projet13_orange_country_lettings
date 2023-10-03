@@ -8,7 +8,7 @@ orbs:
   python: circleci/python@2.1.1
 
 workflows:
-  sample:  # This is the name of the workflow, feel free to change it to better match your workflow.
+  oc_projet13_workflow:  # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
     jobs:
@@ -40,7 +40,7 @@ jobs:
         command: |
           $HOME/.local/bin/coverage run -m pytest
           $HOME/.local/bin/coverage report
-          $HOME/.local/bin/coverage html  # open htmlcov/index.html in a browser
+          $HOME/.local/bin/coverage html
       - store_artifacts:
           path: htmlcov
 
