@@ -32,7 +32,7 @@ def letting(request, letting_id):
         context = {
             "title": letting.title,
             "address": letting.address,
-            "user_ip": LOCAL_IP
+            "user_ip": LOCAL_IP,
         }
         return render(request, "lettings/letting.html", context)
     except Exception:

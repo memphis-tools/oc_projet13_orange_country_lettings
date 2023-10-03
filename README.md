@@ -89,8 +89,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 - `cd /path/to/Python-OC-Lettings-FR/`
 - `source venv/b-in/activate`
-- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
-- `pytest`
+- `pytest oc_projet13/`
 
 #### Base de données
 
