@@ -20,6 +20,8 @@ jobs:
       - run:
         name: Run Tests
         command: |
+          ls /home/
+          ls /home/circleci/
           /home/circleci/.local/bin/coverage run -m pytest
           /home/circleci/.local/bin/coverage report
           /home/circleci/.local/bin/coverage html
