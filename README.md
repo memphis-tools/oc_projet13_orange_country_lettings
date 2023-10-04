@@ -175,6 +175,8 @@ Un script unique permet de déployer l'application sur Docker, soit localement, 
 
 On utilisera le dépôt Docker générique: https://hub.docker.com/
 
+![Screenshot](oc_projet13_dokerhub.png)
+
 Afin de simplifier les illustrations tout comme l'usage des commandes en local, vous aurez créer un fichier ".envrc" tel que déclaré plus haut.
 
 Vous aurez ajouté à votre PATH courant les variables déclarées dans le fichier ".envrc".
@@ -202,14 +204,33 @@ Toute mise à jour de branche autre que master provoque génération d'un pipeli
 Toute mise à jour de la seule branche master provoque génération d'un pipeline:
 - test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
 
+**Illustration pipeline de dev:**
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_circleci.png)
+
+**Illustration Actions Github correspondantes:**
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dev_github_actions.png)
+
+**Noter que le job test du pipeline rafraichit le taux de couverture de "coverage" via Coveralls**: https://coveralls.io
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_coveralls.png)
+
 ### Déploiement application en ligne
 
-Le choix a été fait de déployer sous forme d'application le projet, sur la plateforme Render: https://render.com/
+Le choix a été fait de déployer sous forme d'application le projet, sur la plateforme Render: https://render.com/.
 
 **Tout commit de la seule branche "master"** aura pour effet de redéployer l'application.
 
 Pour information, seul Render fait l'appel de commande suivant pour le build du projet (vous n'aurez pas l'usage de l'argument pour du dev local):
-
 - `./docker-compose-deployment.sh cloud`
+
+Voir en wiki des informations supplémentaires pour le déploiement surRender: [WIKI RENDER](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/wiki/oc_projet13_orange_country_lettings-sur-Render)
+
+### Exploitation de logs
+
+Le choix a été fait de collecter les logs sur Betterstack: https://betterstack.com/.
+
+**Toute saisie d'URL incorrecte sera, par exemple, loguée:**
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_error500.png)
+
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_grafana.png)
 
 ⛩️
