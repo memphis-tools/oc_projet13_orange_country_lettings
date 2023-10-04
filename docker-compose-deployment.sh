@@ -66,13 +66,6 @@ else
         python manage.py makemigrations profiles --noinput
         python manage.py migrate --noinput
         python manage.py collectstatic --no-input --clear
-        echo -e "DEBUG est ${DEBUG}"
-        echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS} SOIT ${RENDER_EXTERNAL_HOSTNAME}"
-        ls -l
-        ls -l ./staticfiles/assets
-        ls -l ./staticfiles/css
-        ls -l ./staticfiles/js
-        pwd
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
