@@ -79,4 +79,4 @@ jobs:
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web
       - run:
           name: order render to rebuild application
-          command: curl "RENDER_DEPLOY_HOOK_URL"
+          command: curl $RENDER_DEPLOY_HOOK_URL
