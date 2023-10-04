@@ -115,7 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-if not DEBUG and RENDER_EXTERNAL_HOSTNAME != None:
+if not DEBUG and RENDER_EXTERNAL_HOSTNAME is not None:
     STATIC_ROOT = "staticfiles/"
     STATIC_URL = "/static/"
     STATICFILES_DIRS = ["./static"]
@@ -123,4 +123,4 @@ if not DEBUG and RENDER_EXTERNAL_HOSTNAME != None:
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = [BASE_DIR / "static",]
+    STATICFILES_DIRS = [BASE_DIR / "static"]
