@@ -53,7 +53,11 @@ else
         source venv/bin/activate
         pip install -r oc_projet13/requirements.txt
         cd ./oc_projet13/
-        python ./manage.py collectstatic --no-input --clear
+        python manage.py makemigrations oc_lettings_site --noinput
+        python manage.py makemigrations lettings --noinput
+        python manage.py makemigrations profiles --noinput
+        python manage.py migrate --noinput
+        python manage.py collectstatic --no-input --clear
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
