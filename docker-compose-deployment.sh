@@ -69,9 +69,9 @@ else
         echo -e "DEBUG est ${DEBUG}"
         echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS} SOIT ${RENDER_EXTERNAL_HOSTNAME}"
         ls -l
-        ls -l ./oc_projet13/staticfiles/assets
-        ls -l ./oc_projet13/staticfiles/css
-        ls -l ./oc_projet13/staticfiles/js
+        ls -l ./staticfiles/assets
+        ls -l ./staticfiles/css
+        ls -l ./staticfiles/js
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
