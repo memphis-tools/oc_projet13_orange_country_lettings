@@ -175,7 +175,7 @@ Un script unique permet de déployer l'application sur Docker, soit localement, 
 
 On utilisera le dépôt Docker générique: https://hub.docker.com/
 
-![Screenshot](oc_projet13_dokerhub.png)
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dokerhub.png)
 
 Afin de simplifier les illustrations tout comme l'usage des commandes en local, vous aurez créer un fichier ".envrc" tel que déclaré plus haut.
 
@@ -205,7 +205,7 @@ Toute mise à jour de la seule branche master provoque génération d'un pipelin
 - test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
 
 **Illustration pipeline de dev:**
-![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_circleci.png)
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dev_circleci.png)
 
 **Illustration Actions Github correspondantes:**
 ![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dev_github_actions.png)
