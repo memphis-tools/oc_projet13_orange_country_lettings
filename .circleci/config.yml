@@ -42,30 +42,41 @@ jobs:
           command: flake8
   build_and_push:
     docker:
-      - image: cimg/python:3.10.5
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - python/install-packages:
-          pip-dependency-file: ./oc_projet13/requirements.txt
-          pkg-manager: pip
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk update && \
+            apk upgrade && \
+            apk add --no-cache \
+              py-pip=9.0.0-r1 \
+              curl
+            pip install \
+              docker-compose==1.12.0
       - run:
           name: login to docker_hub
-          command: docker -u memphistools --password-stdin $HUB_PASSWORD
+          command: docker login -u memphistools --password $HUB_PASSWORD
       - run:
           name: build images
           command: docker-compose -f docker-compose.dev.yml build
       - run:
+          name: check image creation
+          command: docker images
+      - run:
           name: tag nginx image
-          command: docker tag oc_projet13_orange_country_lettings_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+          command: docker tag project_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
       - run:
           name: tag web image
-          command: docker tag oc_projet13_orange_country_lettings_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web
+          command: docker tag project_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web
       - run:
           name: push nginx image on dockerhub
-          command: push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
       - run:
           name: push web image on dockerhub
-          command: push memphistools/public_repo:oc_projet13_orange_country_lettings_web
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web
       - run:
           name: order render to rebuild application
-          command: curl https://api.render.com/deploy/$RENDER_TOKEN
+          command: curl "RENDER_DEPLOY_HOOK_URL"
