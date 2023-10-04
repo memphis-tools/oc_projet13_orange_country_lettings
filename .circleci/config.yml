@@ -50,7 +50,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: login to docker_hub
-          command: docker login -u memphistools --password-stdin $HUB_PASSWORD
+          command: docker login -u memphistools --password $HUB_PASSWORD
       - run:
           name: build images
           command: docker-compose -f docker-compose.dev.yml build
