@@ -18,6 +18,9 @@ function update_application {
   docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations lettings --noinput
   docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations profiles --noinput
   docker-compose -f docker-compose.dev.yml exec web python manage.py migrate --noinput
+  echo "DEBUG SIR"
+  ls -l
+
   docker-compose -f docker-compose.dev.yml exec web python manage.py collectstatic --no-input --clear
 }
 
@@ -65,7 +68,10 @@ else
         python manage.py collectstatic --no-input --clear
         echo -e "DEBUG est ${DEBUG}"
         echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS} SOIT ${RENDER_EXTERNAL_HOSTNAME}"
-        ls -l ./staticfiles/assets
+        ls -l
+        ls -l ./oc_projet13/staticfiles/assets
+        ls -l ./oc_projet13/staticfiles/css
+        ls -l ./oc_projet13/staticfiles/js
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
