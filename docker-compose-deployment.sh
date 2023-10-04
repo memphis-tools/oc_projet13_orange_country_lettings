@@ -64,9 +64,8 @@ else
         python manage.py migrate --noinput
         python manage.py collectstatic --no-input --clear
         echo -e "DEBUG est ${DEBUG}"
-        echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS}"
+        echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS} SOIT ${RENDER_EXTERNAL_HOSTNAME}"
         ls -l ./staticfiles/assets
-        echo -e "os.environ.get('RENDER_EXTERNAL_HOSTNAME')"
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
