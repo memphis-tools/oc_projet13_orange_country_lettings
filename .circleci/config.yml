@@ -9,7 +9,14 @@ workflows:
     jobs:
       - test
       - lint
-      - build_and_push
+      - build_and_publish:
+          filters:
+            branches:
+               only:
+                - master
+      - deploy:
+          requires:
+            - build_and_publish
 
 jobs:
   test:
@@ -40,7 +47,7 @@ jobs:
       - run:
           name: Run flake8
           command: flake8
-  build_and_push:
+  build_and_publish:
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -77,6 +84,19 @@ jobs:
       - run:
           name: push web image on dockerhub
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web
+  deploy:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk update && \
+            apk upgrade && \
+            apk add --no-cache \
+              curl
       - run:
           name: order render to rebuild application
           command: curl $RENDER_DEPLOY_HOOK_URL
