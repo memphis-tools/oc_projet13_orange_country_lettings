@@ -57,7 +57,7 @@ else
         python manage.py makemigrations lettings --noinput
         python manage.py makemigrations profiles --noinput
         python manage.py migrate --noinput
-        python manage.py collectstatic --no-input --clear
+        # python manage.py collectstatic --no-input --clear
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
