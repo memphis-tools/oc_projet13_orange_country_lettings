@@ -70,10 +70,10 @@ jobs:
           command: docker tag project_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web
       - run:
           name: push nginx image on dockerhub
-          command: push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
       - run:
           name: push web image on dockerhub
-          command: push memphistools/public_repo:oc_projet13_orange_country_lettings_web
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web
       - run:
           name: order render to rebuild application
           command: curl https://api.render.com/deploy/$RENDER_TOKEN
