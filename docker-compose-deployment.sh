@@ -66,6 +66,7 @@ else
         echo -e "DEBUG est ${DEBUG}"
         echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS}"
         ls -l ./staticfiles/assets
+        echo -e "os.environ.get('RENDER_EXTERNAL_HOSTNAME')"
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
