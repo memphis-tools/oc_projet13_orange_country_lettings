@@ -7,6 +7,6 @@ services:
     buildCommand: "./docker-compose-deployment.sh cloud"
     startCommand: "./venv/bin/python -m gunicorn -b :8000 oc_projet13.wsgi:application"
     envVars:
-      - fromGroup: oc_projet13
       - key: PYTHON_VERSION
         value: 3.10.11
+      - fromGroup: oc_projet13
