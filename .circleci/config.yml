@@ -42,15 +42,20 @@ jobs:
           command: flake8
   build_and_push:
     docker:
-      - image: cimg/python:3.10.5
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - python/install-packages:
-          pip-dependency-file: ./oc_projet13/requirements.txt
-          pkg-manager: pip
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              docker-compose==1.12.0
       - run:
           name: login to docker_hub
-          command: docker -u memphistools --password-stdin $HUB_PASSWORD
+          command: docker login -u memphistools --password $HUB_PASSWORD
       - run:
           name: build images
           command: docker-compose -f docker-compose.dev.yml build
