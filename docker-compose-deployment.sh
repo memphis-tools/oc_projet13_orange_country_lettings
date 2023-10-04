@@ -63,11 +63,8 @@ else
         python manage.py makemigrations profiles --noinput
         python manage.py migrate --noinput
         python manage.py collectstatic --no-input --clear
-        echo "coucou"
-        ls
-        ls -l
-        ls -la
-        ls -l ./staticfiles/
+        echo -e "DEBUG est ${DEBUG}"
+        ls -l ./staticfiles/assets
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
