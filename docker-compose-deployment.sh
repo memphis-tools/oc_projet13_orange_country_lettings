@@ -59,7 +59,7 @@ else
         python manage.py migrate --noinput
         export DEBUG=1
         python manage.py collectstatic --no-input --clear
-        export DEBUG=0
+        export DEBUG=1
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
