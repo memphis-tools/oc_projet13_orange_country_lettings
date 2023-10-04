@@ -52,6 +52,7 @@ else
         python -m venv venv
         source venv/bin/activate
         pip install -r oc_projet13/requirements.txt
+        cd ./oc_projet13/
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
