@@ -52,7 +52,7 @@ else
         python -m venv venv
         source venv/bin/activate
         pip install -r oc_projet13/requirements.txt
-        gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
+        gunicorn oc_projet13/oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
         docker-compose -f docker-compose.dev.yml down -v
