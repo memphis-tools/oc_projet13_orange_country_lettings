@@ -68,6 +68,7 @@ else
         python manage.py collectstatic --no-input --clear
         echo -e "DEBUG est ${DEBUG}"
         echo -e "ALLOWED_HOSTS est ${ALLOWED_HOSTS} SOIT ${RENDER_EXTERNAL_HOSTNAME}"
+        ls -l
         ls -l ./oc_projet13/staticfiles/assets
         ls -l ./oc_projet13/staticfiles/css
         ls -l ./oc_projet13/staticfiles/js
