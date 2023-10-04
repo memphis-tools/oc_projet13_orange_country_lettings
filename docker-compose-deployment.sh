@@ -72,6 +72,7 @@ else
         ls -l ./staticfiles/assets
         ls -l ./staticfiles/css
         ls -l ./staticfiles/js
+        pwd
         gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
