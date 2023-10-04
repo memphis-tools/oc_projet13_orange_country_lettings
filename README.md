@@ -14,19 +14,18 @@ Site web d'Orange County Lettings
 
 ![Orange Country Lettings](orange_country_lettings.png)
 
-## Développement cloud
-
-⛩️ (en cours)
+---
 
 ## Développement local
 
 ### Prérequis
 
+- Connexion internet
 - Compte GitHub avec accès en lecture à ce repository
-- Compte DockerHub pour déposer une image
 - Compte Betterstack avec un API token valide (concerne la collecte de log)
 - Compte Coveralls avec un API token valide (concerne les tests, la mise à jour du taux couverture)
-- Compte Render avec le Blueprint connecté au dépôt github et un Env group.
+- Compte DockerHub pour déposer une image (nécessaire seulement si vous souhaitez déposer les images sur un dépôt Docker)
+- Compte Render avec le Blueprint connecté au dépôt Github (nécessaire seulement pour déployer sur cloud, voir section Déploiement)
 - Git CLI
 - SQLite3 CLI
 - Interpréteur Python, version 3.6 ou supérieure
@@ -54,23 +53,29 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 #### Mettre à jour les variables d'environnement
 
-  On met à jour le PATH pour la seule exécution en locale.
+On met à jour le PATH pour la seule exécution en locale.
 
-  Créer un fichier .envrc avec les variables suivantes (à adapter avec vos identifiants):
+- `cd /path/to/Python-OC-Lettings-FR`
+
+Créer un fichier ".envrc" avec les variables suivantes (à adapter avec vos identifiants):
 
     export BETTERSTACK_SOURCE_TOKEN='SuperTokenFromBetterStack'
     export COVERALLS_REPO_TOKEN=SuperTokenFromCoveralls
     export SECRET_KEY='MakeYourOwnSecretKey'
     export DJANGO_ALLOWED_HOSTS='localhost,127.0.0.1'
     export DEBUG=0
+    export DOCKER_HUB_USER='YourDockerHubUser'
+    export DOCKER_HUB_PASSWORD='YourDockerHubPassword'
 
-  Ajouter les variables au PATH courant:
+NB: les 2 exports DOCKER_HUB_* sont optionnels. Nécessaires que pour publiser ses propres images locales vers un dépôt Docker. Voir section 'Déploiement'.
 
-    `source .envrc`
+Ajouter les variables au PATH courant:
 
-  Noter que le logger est déclaré dans le fichier "logtail_handler.py".
+  `source .envrc`
 
-#### Exécuter le site
+Noter que le logger est déclaré dans le fichier "logtail_handler.py".
+
+#### Exécuter le site, en local, sans Docker
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `source venv/bin/activate`
@@ -78,6 +83,29 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `python manage.py runserver`
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+
+#### Exécuter le site, en local, avec Docker
+
+Vous devez avoir installé "docker" (ou podman) et "docker-compose".
+
+On va exécuter un script format BASH. Sur Windows il faudra adapter, jouer les seules commandes nécessaires.
+
+- `cd /path/to/Python-OC-Lettings-FR`
+
+Pour une première exécution:
+- `./docker-compose-deployment.sh build`
+
+Dans le cas où vous avez déjà les images en local et l'application initialisée:
+- `./docker-compose-deployment.sh run`
+
+Pour arrêter les conteneurs:
+- `./docker-compose-deployment.sh down`
+
+Remarque: noter que vous pouvez télécharger les 2 images publiques suivantes (usage de podman ou docker selon les versions d'OS):
+
+- `podman pull docker.io/memphistools/public_repo:oc_projet13_orange_country_lettings_web`
+
+- `podman pull docker.io/memphistools/public_repo:oc_projet13_orange_country_lettings_nginx`
 
 #### Linting
 
@@ -90,7 +118,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 - `cd /path/to/Python-OC-Lettings-FR/`
 - `source venv/b-in/activate`
-- `pytest oc_projet13/`
+- `python -m coverage run -m pytest ./oc_projet13`
 
 #### Base de données
 
@@ -116,3 +144,72 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1`
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+---
+
+## Déploiement
+
+Cette section évoque le déploiement des images Docker et ou de l'application en ligne chez un cloud provider.
+
+Les prérequis rejoignent ceux de la section "Développement local".
+
+### Conteneurisation de l'application
+
+L'arborescence du projet est adaptée à une conteneurisation basique de Docker, "dans un contexte similaire à celui présenté"".
+
+2 services supplémentaires sont introduits: Gunicorn et Nginx.
+
+Gunicorn va servir le contenu délivré par l'application Python (Django en l'occurence). Gunicorn et le code applicatif formeront 1 service global.
+
+Nginx servira de reverse proxy 'au service' de Gunicorn, en servant tout fichier statique: images, css, js etc.
+
+On aura 2 conteneurs Docker, 1 pour chaque service. Ils sont orchestrés par "docker-compose (Compose)": on ne lance pas l'un sans l'autre.
+
+Un fichier "docker-compose.dev.yml" est celui utilisé lors des phases de "build"
+
+Un second fichier "docker-compose.prod.yml" est celui utilisé lors des phsases "d'exécution".
+
+Un script unique permet de déployer l'application sur Docker, soit localement, soit sur cloud: docker-compose-deployment.sh.
+
+### Déploiement images Docker, sur DockerHub
+
+On utilisera le dépôt Docker générique: https://hub.docker.com/
+
+Afin de simplifier les illustrations tout comme l'usage des commandes en local, vous aurez créer un fichier ".envrc" tel que déclaré plus haut.
+
+Vous aurez ajouté à votre PATH courant les variables déclarées dans le fichier ".envrc".
+
+On va exécuter un script format BASH. Sur Windows il faudra adapter, jouer les seules commandes nécessaires.
+
+- `cd /path/to/Python-OC-Lettings-FR`
+- `./docker-compose-deployment.sh build`
+- `./docker-compose-deployment.sh down`
+- `./docker-compose-deployment.sh publish`
+
+### Construction d'un pipeline de test, de build et de publication
+
+En tant que développeur vous travaillerez à partir du dépôt clôné.
+
+Pour vérifier et/ou publier les actions effectuées une automatisation est mise en place via Circleci: https://circleci.com/
+
+Il s'agit d'un processus qui va réaliser des actions déclarées dans un fichier et format préconvenu: .circleci/config.yml.
+
+Les actions consistent à effectuer les tests à la place du développeur, à contrôler le "lint", à effectuer le build et publication des images Docker.
+
+Toute mise à jour de branche autre que master provoque génération d'un pipeline:
+- test, lint, build (avec mise à jour image sur DockerHub).
+
+Toute mise à jour de la seule branche master provoque génération d'un pipeline:
+- test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
+
+### Déploiement application en ligne
+
+Le choix a été fait de déployer sous forme d'application le projet, sur la plateforme Render: https://render.com/
+
+**Tout commit de la seule branche "master"** aura pour effet de redéployer l'application.
+
+Pour information, seul Render fait l'appel de commande suivant pour le build du projet (vous n'aurez pas l'usage de l'argument pour du dev local):
+
+- `./docker-compose-deployment.sh cloud`
+
+⛩️
