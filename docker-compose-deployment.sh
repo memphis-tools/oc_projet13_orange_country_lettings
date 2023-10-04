@@ -51,9 +51,8 @@ else
         # Création d'un environnement virtuel qui pourra être utilisé par Render
         python -m venv venv
         source venv/bin/activate
-        docker pull $IMAGE_NAME:oc_projet13_orange_country_lettings_web
-        docker pull $IMAGE_NAME:oc_projet13_orange_country_lettings_nginx
-        docker-compose -f docker-compose.prod.yml up -d
+        pip install -r oc_projet13/requirements.txt
+        gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
   ;;
     "down" )
         docker-compose -f docker-compose.dev.yml down -v
