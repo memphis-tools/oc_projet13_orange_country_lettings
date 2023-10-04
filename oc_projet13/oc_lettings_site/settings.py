@@ -119,6 +119,5 @@ STATIC_ROOT = "staticfiles/"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = ["./static"]
 
-# WHITENOISE_MANIFEST_STRICT = False
-# if not DEBUG:
-#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
