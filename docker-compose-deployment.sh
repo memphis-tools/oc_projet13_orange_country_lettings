@@ -36,6 +36,11 @@ else
             docker-compose -f docker-compose.dev.yml up -d --build
             sleep 1s
             update_application
+            podman login -u memphistools docker.io
+            podman tag oc_projet13_orange_country_lettings_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+            podman tag oc_projet13_orange_country_lettings_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web
+            podman push memphistools/public_repo:oc_projet13_orange_country_lettings_web
+            podman push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
             ;;
         	"run" )
             echo "[INFO] We (re)start application."
