@@ -26,9 +26,9 @@ if [ ${#args[@]} -eq 0 ]
 then
   display_arg_error
 else
-  source .envrc
   case $1 in
     "build" )
+      source .envrc
       echo "[INFO] We (re)build images and (re)initialize the application."
       docker-compose -f docker-compose.dev.yml down -v
       sleep 1s
@@ -37,6 +37,7 @@ else
       update_application
       ;;
     "publish" )
+      source .envrc
       echo "[INFO] We tag and (re)publish images on DockerHub."
       podman login -u $DOCKER_HUB_USER docker.io --password $DOCKER_HUB_PASSWORD
       podman tag oc_projet13_orange_country_lettings_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
@@ -45,6 +46,7 @@ else
       podman push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
       ;;
     "run" )
+      source .envrc
       echo "[INFO] We (re)start application."
       docker-compose -f docker-compose.dev.yml down -v
       docker-compose -f docker-compose.dev.yml up -d
@@ -63,7 +65,7 @@ else
       gunicorn oc_lettings_site.wsgi:application --bind 0.0.0.0:8000
       ;;
     "down" )
-        docker-compose -f docker-compose.dev.yml down -v
-        ;;
+      docker-compose -f docker-compose.dev.yml down -v
+      ;;
   esac
 fi
