@@ -18,9 +18,6 @@ function update_application {
   docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations lettings --noinput
   docker-compose -f docker-compose.dev.yml exec web python manage.py makemigrations profiles --noinput
   docker-compose -f docker-compose.dev.yml exec web python manage.py migrate --noinput
-  echo "DEBUG SIR"
-  ls -l
-
   docker-compose -f docker-compose.dev.yml exec web python manage.py collectstatic --no-input --clear
 }
 
