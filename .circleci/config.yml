@@ -18,6 +18,9 @@ workflows:
               ignore:
                 - amelioration/lint_flake8_readme
       - build_and_publish:
+          requires:
+            - test
+            - lint
           filters:
             branches:
                only:
