@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Construction d’un pipeline de test, de build et de publication &mdash; Documentation oc_projet13 05-10-2023</title>
+  <title>Exploration code, app OC lettings site &mdash; Documentation oc_projet13 05-10-2023</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,8 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Déploiement application en ligne" href="deploy_on_render.html" />
-    <link rel="prev" title="Déploiement images Docker, sur DockerHub" href="deploy_images_on_dockerhub.html" /> 
+    <link rel="prev" title="Exploration code, app profiles" href="code_review_profiles.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,17 +46,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="prerequis.html">Prérequis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developpement.html">Développement local</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="deploiement.html">Déploiement</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="deploy_conteneuriser.html">Conteneurisation de l’application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_images_on_dockerhub.html">Déploiement images Docker, sur DockerHub</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Construction d’un pipeline de test, de build et de publication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_on_render.html">Déploiement application en ligne</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_logcollect.html">Exploitation de logs</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_review_lettings.html">Exploration code, app lettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code_review_profiles.html">Exploration code, app profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code_review_oc_lettings_site.html">Exploration code, app OC lettings site</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Exploration code, app OC lettings site</a></li>
 </ul>
 
         </div>
@@ -74,10 +66,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="deploiement.html">Déploiement</a></li>
-      <li class="breadcrumb-item active">Construction d’un pipeline de test, de build et de publication</li>
+      <li class="breadcrumb-item active">Exploration code, app OC lettings site</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/deploy_pipeline.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/code_review_oc_lettings_site.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -85,24 +76,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="construction-d-un-pipeline-de-test-de-build-et-de-publication">
-<h1>Construction d’un pipeline de test, de build et de publication<a class="headerlink" href="#construction-d-un-pipeline-de-test-de-build-et-de-publication" title="Link to this heading"></a></h1>
-<p>En tant que développeur vous travaillerez à partir du dépôt clôné.</p>
-<p>Pour vérifier et/ou publier les actions effectuées une automatisation est mise en place via <a class="reference external" href="https://circleci.com/">Circleci</a></p>
-<p>Il s’agit d’un processus qui va réaliser des actions déclarées dans un fichier et format préconvenu: .circleci/config.yml.</p>
-<p>Les actions consistent à effectuer les tests à la place du développeur, à contrôler le « lint », à effectuer le build et publication des images Docker.</p>
-<p>Toute mise à jour de branche autre que master provoque génération d’un pipeline:
-- test, lint, build (avec mise à jour image sur DockerHub).</p>
-<p>Toute mise à jour de la seule branche master provoque génération d’un pipeline:
-- test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l’application sur Render.</p>
+  <section id="exploration-code-app-oc-lettings-site">
+<h1>Exploration code, app OC lettings site<a class="headerlink" href="#exploration-code-app-oc-lettings-site" title="Link to this heading"></a></h1>
+<section id="module-oc_lettings_site.views">
+<span id="oc-lettings-site-views"></span><h2>OC Lettings Site Views<a class="headerlink" href="#module-oc_lettings_site.views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.views.handler404">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.views.</span></span><span class="sig-name descname"><span class="pre">handler404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/views.html#handler404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.views.handler404" title="Link to this definition"></a></dt>
+<dd><p>Return a custom 400 error HTML page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.views.handler500">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.views.</span></span><span class="sig-name descname"><span class="pre">handler500</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/views.html#handler500"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.views.handler500" title="Link to this definition"></a></dt>
+<dd><p>Return a custom 500 error HTML page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oc_lettings_site.views.index">
+<span class="sig-prename descclassname"><span class="pre">oc_lettings_site.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/oc_lettings_site/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oc_lettings_site.views.index" title="Link to this definition"></a></dt>
+<dd><p>Return the template named index.html which is the main index for application.</p>
+</dd></dl>
+
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="deploy_images_on_dockerhub.html" class="btn btn-neutral float-left" title="Déploiement images Docker, sur DockerHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="deploy_on_render.html" class="btn btn-neutral float-right" title="Déploiement application en ligne" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="code_review_profiles.html" class="btn btn-neutral float-left" title="Exploration code, app profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
 
   <hr/>

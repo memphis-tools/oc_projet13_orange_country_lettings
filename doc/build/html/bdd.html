@@ -59,6 +59,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_review_lettings.html">Exploration code, app lettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_review_profiles.html">Exploration code, app profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_review_oc_lettings_site.html">Exploration code, app OC lettings site</a></li>
 </ul>
 
         </div>
@@ -88,6 +91,8 @@
              
   <section id="base-de-donnees">
 <h1>Base de données<a class="headerlink" href="#base-de-donnees" title="Link to this heading"></a></h1>
+<section id="decouverte">
+<h2>Découverte<a class="headerlink" href="#decouverte" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><cite>cd oc_projet13_orange_country_lettings/</cite></p></li>
 </ul>
@@ -132,6 +137,35 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.quit</span>
 </pre></div>
 </div>
+</section>
+<section id="structure-base-de-donnees">
+<h2>Structure base de données<a class="headerlink" href="#structure-base-de-donnees" title="Link to this heading"></a></h2>
+<p>La structure des principales tables est la suivante. Noter que le modèle de classe User natif de Django est utilisé.</p>
+<dl class="simple">
+<dt>sqlite&gt; pragma table_info(lettings_address);</dt><dd><ul class="simple">
+<li><p>0|id|integer|1||1</p></li>
+<li><p>1|number|integer unsigned|1||0</p></li>
+<li><p>2|street|varchar(64)|1||0</p></li>
+<li><p>3|city|varchar(64)|1||0</p></li>
+<li><p>4|state|varchar(2)|1||0</p></li>
+<li><p>5|zip_code|integer unsigned|1||0</p></li>
+<li><p>6|country_iso_code|varchar(3)|1||0</p></li>
+</ul>
+</dd>
+<dt>sqlite&gt; pragma table_info(lettings_letting);</dt><dd><ul class="simple">
+<li><p>0|id|integer|1||1</p></li>
+<li><p>1|title|varchar(256)|1||0</p></li>
+<li><p>2|address_id|integer|1||0</p></li>
+</ul>
+</dd>
+<dt>sqlite&gt; pragma table_info(profiles_profile);</dt><dd><ul class="simple">
+<li><p>0|id|integer|1||1</p></li>
+<li><p>1|favorite_city|varchar(64)|1||0</p></li>
+<li><p>2|user_id|integer|1||0</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </section>
 
 
