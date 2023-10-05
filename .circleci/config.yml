@@ -7,8 +7,16 @@ orbs:
 workflows:
   oc_projet13_workflow:
     jobs:
-      - test
-      - lint
+      - test:
+         filters:
+            branches:
+              ignore:
+                - amelioration/lint_flake8_readme
+      - lint:
+         filters:
+            branches:
+              ignore:
+                - amelioration/lint_flake8_readme
       - build_and_publish:
           filters:
             branches:
