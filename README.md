@@ -4,6 +4,7 @@
 ![Screenshot](https://img.shields.io/badge/circleci--blue?logo=circleci&logoColor=yellow)
 ![Screenshot](https://img.shields.io/badge/coveralls--blue?logo=coveralls&logoColor=yellow)
 [![Coverage Status](https://coveralls.io/repos/github/memphis-tools/oc_projet13_orange_country_lettings/badge.svg?branch=fonctionnalite/circleci_ci_cd)](https://coveralls.io/github/memphis-tools/oc_projet13_orange_country_lettings?branch=fonctionnalite/circleci_ci_cd)
+[![Documentation Status](https://readthedocs.org/projects/oc-projet13-orange-country-lettings/badge/?version=latest)](https://oc-projet13-orange-country-lettings.readthedocs.io/fr/latest/?badge=latest)
 
 # [OpenClassRoom](https://openclassrooms.com/) - Parcours développeur Python
 ![Screenshot](oc_parcours_dev_python.png)
@@ -234,5 +235,11 @@ Le choix a été fait de collecter les logs sur Betterstack: https://betterstack
 ![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_error500.png)
 
 ![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_grafana.png)
+
+---
+
+## ReadThedocs
+
+La documentation de l'application est servie et actualisée sur ReadTheDocs: https://oc-projet13-orange-country-lettings.readthedocs.io/fr/latest/
 
 ⛩️
