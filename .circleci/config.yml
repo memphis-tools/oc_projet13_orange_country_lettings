@@ -1,0 +1,99 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@2.1.1
+  browser-tools: circleci/browser-tools@1.2.3
+
+workflows:
+  oc_projet13_workflow:
+    jobs:
+      - test
+      - lint
+      - build_and_publish:
+          filters:
+            branches:
+               only:
+                - master
+      - deploy:
+          requires:
+            - build_and_publish
+
+jobs:
+  test:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - python/install-packages:
+          pip-dependency-file: ./oc_projet13/requirements.txt
+          pkg-manager: pip
+      - run:
+          name: Run Tests
+          command: |
+            python -m coverage run -m pytest ./oc_projet13
+            python -m coverage report
+            python -m coverage html
+            python -m coveralls
+      - store_artifacts:
+          path: htmlcov
+  lint:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - python/install-packages:
+          pip-dependency-file: ./oc_projet13/requirements.txt
+          pkg-manager: pip
+      - run:
+          name: Run flake8
+          command: flake8
+  build_and_publish:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk update && \
+            apk upgrade && \
+            apk add --no-cache \
+              py-pip=9.0.0-r1 \
+              curl
+            pip install \
+              docker-compose==1.12.0
+      - run:
+          name: login to docker_hub
+          command: docker login -u memphistools --password $HUB_PASSWORD
+      - run:
+          name: build images
+          command: docker-compose -f docker-compose.dev.yml build
+      - run:
+          name: tag nginx image
+          command: docker tag project_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+      - run:
+          name: tag web image
+          command: docker tag project_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web
+      - run:
+          name: push nginx image on dockerhub
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
+      - run:
+          name: push web image on dockerhub
+          command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web
+  deploy:
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk update && \
+            apk upgrade && \
+            apk add --no-cache \
+              curl
+      - run:
+          name: order render to rebuild application
+          command: curl $RENDER_DEPLOY_HOOK_URL
