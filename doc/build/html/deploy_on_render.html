@@ -89,8 +89,11 @@
 <h1>Déploiement application en ligne<a class="headerlink" href="#deploiement-application-en-ligne" title="Link to this heading"></a></h1>
 <p>Le choix a été fait de déployer sous forme d’application le projet, sur la plateforme <a class="reference external" href="https://render.com/">Render:</a>.</p>
 <p><strong>Tout commit de la seule branche « master »</strong> aura pour effet de redéployer l’application.</p>
-<p>Pour information, seul Render fait l’appel de commande suivant pour le build du projet (vous n’aurez pas l’usage de l’argument pour du dev local):
-- <cite>./docker-compose-deployment.sh cloud</cite></p>
+<p>Pour information, seul Render fait l’appel de commande suivant pour le build du projet (vous n’aurez pas l’usage de l’argument pour du dev local):</p>
+<ul class="simple">
+<li><p><cite>./docker-compose-deployment.sh cloud</cite></p></li>
+</ul>
+<p>Par le biais d’un webhook exécuté depuis le pipeline en dernière étape, l’application est re-publiée sur Render.</p>
 </section>
 
 

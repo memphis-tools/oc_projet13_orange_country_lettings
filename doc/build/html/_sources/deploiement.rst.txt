@@ -3,7 +3,7 @@ Déploiement
 
 Cette section évoque le déploiement des images Docker et ou de l'application en ligne chez un cloud provider.
 
-Les prérequis rejoignent ceux de la section `Développement local <Développement.html>`_.
+Les prérequis rejoignent ceux de la section `Développement local`.
 
 .. toctree::
 

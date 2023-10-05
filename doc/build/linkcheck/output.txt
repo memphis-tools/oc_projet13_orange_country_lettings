@@ -1,1 +1,0 @@
-index.rst:12: [redirected with Found] https://openclassrooms.com/ to https://openclassrooms.com/fr/
