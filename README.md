@@ -16,6 +16,8 @@ Site web d'Orange County Lettings
 
 ---
 
+**Last update: 2023/10/05**
+
 ## Développement local
 
 ### Prérequis
@@ -37,7 +39,7 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 #### Cloner le repository
 
 - `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+- `git clone https://github.com/memphis-tools/oc_projet13_orange_country_lettings.git`
 
 #### Créer l'environnement virtuel
 
@@ -67,7 +69,7 @@ Créer un fichier ".envrc" avec les variables suivantes (à adapter avec vos ide
     export DOCKER_HUB_USER='YourDockerHubUser'
     export DOCKER_HUB_PASSWORD='YourDockerHubPassword'
 
-NB: les 2 exports DOCKER_HUB_* sont optionnels. Nécessaires que pour publiser ses propres images locales vers un dépôt Docker. Voir section 'Déploiement'.
+NB: les 2 exports DOCKER_HUB_* sont optionnels. Nécessaires que pour publier ses propres images locales vers un dépôt Docker. Voir section 'Déploiement'.
 
 Ajouter les variables au PATH courant:
 
@@ -109,22 +111,22 @@ Remarque: noter que vous pouvez télécharger les 2 images publiques suivantes (
 
 #### Linting
 
-- `cd /path/to/Python-OC-Lettings-FR/`
+- `cd oc_projet13_orange_country_lettings/`
 - `source venv/bin/activate`
-- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
+- `cd oc_projet13_orange_country_lettings/oc_projet13/`
 - `flake8`
 
 #### Tests unitaires
 
-- `cd /path/to/Python-OC-Lettings-FR/`
+- `cd oc_projet13_orange_country_lettings/`
 - `source venv/b-in/activate`
 - `python -m coverage run -m pytest ./oc_projet13`
 
 #### Base de données
 
-- `cd /path/to/Python-OC-Lettings-FR/`
+- `cd oc_projet13_orange_country_lettings/`
 - `source venv/b-in/activate`
-- `cd /path/to/Python-OC-Lettings-FR/oc_projet13/`
+- `cd oc_projet13_orange_country_lettings/oc_projet13/`
 - Ouvrir une session shell `sqlite3`
 - Se connecter à la base de données `.open oc-lettings-site.sqlite3`
 - Afficher les tables dans la base de données `.tables`
