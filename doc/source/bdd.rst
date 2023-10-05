@@ -1,6 +1,9 @@
 Base de données
 ===============
 
+Découverte
+----------
+
 - `cd oc_projet13_orange_country_lettings/`
 
 .. code-block:: console
@@ -44,3 +47,28 @@ Base de données
 .. code-block:: console
 
   .quit
+
+
+Structure base de données
+-------------------------
+
+La structure des principales tables est la suivante. Noter que le modèle de classe User natif de Django est utilisé.
+
+sqlite> pragma table_info(lettings_address);
+  - 0|id|integer|1||1
+  - 1|number|integer unsigned|1||0
+  - 2|street|varchar(64)|1||0
+  - 3|city|varchar(64)|1||0
+  - 4|state|varchar(2)|1||0
+  - 5|zip_code|integer unsigned|1||0
+  - 6|country_iso_code|varchar(3)|1||0
+
+sqlite> pragma table_info(lettings_letting);
+  - 0|id|integer|1||1
+  - 1|title|varchar(256)|1||0
+  - 2|address_id|integer|1||0
+
+sqlite> pragma table_info(profiles_profile);
+  - 0|id|integer|1||1
+  - 1|favorite_city|varchar(64)|1||0
+  - 2|user_id|integer|1||0

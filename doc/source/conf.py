@@ -7,8 +7,14 @@
 # Path setup
 import os
 import sys
+import django
 
-sys.path.insert(0, os.path.abspath("../.."))
+
+sys.path.insert(0, os.path.abspath("../../oc_projet13"))
+os.environ["DJANGO_SETTINGS_MODULE"] = "oc_lettings_site.settings"
+os.environ["DJANGO_ALLOWED_HOSTS"] = "localhost"
+os.environ["SECRET_KEY"] = "bebopalula"
+django.setup()
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
