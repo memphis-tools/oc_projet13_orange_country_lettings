@@ -11,4 +11,4 @@ Prérequis
 - SQLite3 CLI
 - Interpréteur Python, version 3.6 ou supérieure
 
-Dans le reste de la documentation sur le `Développement local <Développement.html>`_, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+Dans le reste de la documentation sur le `Développement local`, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
