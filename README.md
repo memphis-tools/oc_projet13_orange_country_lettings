@@ -202,20 +202,23 @@ Il s'agit d'un processus qui va réaliser des actions déclarées dans un fichie
 
 Les actions consistent à effectuer les tests à la place du développeur, à contrôler le "lint", à effectuer le build et publication des images Docker.
 
-Toute mise à jour de branche autre que master provoque génération d'un pipeline:
-- test, lint, build (avec mise à jour image sur DockerHub).
+Toute mise à jour de branche autre que master provoque génération d'un pipeline sans build:
+- test, lint.
 
-Toute mise à jour de la seule branche master provoque génération d'un pipeline:
+**Toute mise à jour de la seule branche master provoque génération d'un pipeline avec build:
 - test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
 
 **Illustration pipeline de dev:**
-![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dev_circleci.png)
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/circleci_pipeline_prod.png)
 
 **Illustration Actions Github correspondantes:**
 ![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_dev_github_actions.png)
 
 **Noter que le job test du pipeline rafraichit le taux de couverture de "coverage" via Coveralls**: https://coveralls.io
-![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/oc_projet13_coveralls.png)
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/coveralls_prod.png)
+
+**Remarquer enfin que la documentation est mise à jour automatiquement.**
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/read_the_doc_hook.png)
 
 ### Déploiement application en ligne
 
@@ -227,6 +230,9 @@ Pour information, seul Render fait l'appel de commande suivant pour le build du 
 - `./docker-compose-deployment.sh cloud`
 
 Voir en wiki des informations supplémentaires pour le déploiement surRender: [WIKI RENDER](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/wiki/oc_projet13_orange_country_lettings-sur-Render)
+
+Par le biais d'un webhook exécuté depuis le pipeline en dernière étape, l'application est re-publiée sur Render.
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/render_webhook.png)
 
 ### Exploitation de logs
 
@@ -242,7 +248,7 @@ Le choix a été fait de collecter les logs sur Betterstack: https://betterstack
 ## ReadThedocs
 
 La documentation de l'application est servie et actualisée sur ReadTheDocs: https://oc-projet13-orange-country-lettings.readthedocs.io/fr/latest/
-
+![Screenshot](https://github.com/memphis-tools/oc_projet13_orange_country_lettings/blob/development/illustrations/read_the_docs.png)
 ---
 
 ## Consulter l'application en ligne
