@@ -3,7 +3,7 @@ Déploiement images Docker, sur DockerHub
 
 On utilisera le dépôt Docker générique: `DockerHub <https://hub.docker.com/>`_
 
-Afin de simplifier les illustrations tout comme l'usage des commandes en local, vous aurez créer un fichier ".envrc" tel que déclaré dans `Développement <Développement.html>`_.
+Afin de simplifier les illustrations tout comme l'usage des commandes en local, vous aurez créer un fichier ".envrc" tel que déclaré dans `Développement local`.
 
 Vous aurez ajouté à votre PATH courant les variables déclarées dans le fichier ".envrc".
 
