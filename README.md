@@ -243,4 +243,14 @@ Le choix a été fait de collecter les logs sur Betterstack: https://betterstack
 
 La documentation de l'application est servie et actualisée sur ReadTheDocs: https://oc-projet13-orange-country-lettings.readthedocs.io/fr/latest/
 
+---
+
+## Consulter l'application en ligne
+
+Noter que sans activité, et du fait d'une souscription sans engagement, les applications peuvent être mises à l'arrêt par l'équipe Render.
+
+De même les temps de chargement peuvent être anormalement long comparé à des sites en production.
+
+Si le site est en ligne, vous pourrez le consulter: https://oc-projet13-o83m.onrender.com/
+
 ⛩️
