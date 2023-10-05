@@ -203,9 +203,11 @@ Il s'agit d'un processus qui va réaliser des actions déclarées dans un fichie
 Les actions consistent à effectuer les tests à la place du développeur, à contrôler le "lint", à effectuer le build et publication des images Docker.
 
 Toute mise à jour de branche autre que master provoque génération d'un pipeline sans build:
+
 - test, lint.
 
 **Toute mise à jour de la seule branche master provoque génération d'un pipeline avec build:
+
 - test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
 
 **Illustration pipeline de dev:**
