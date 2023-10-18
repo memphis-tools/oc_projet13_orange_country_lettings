@@ -13,11 +13,12 @@ DATAS = ''
 with open("./flake8_rapport/index.html", "r") as fd:
     DATAS = fd.readlines()
 
-print(f"DATAS SIR: {DATAS}")
-
 is_good = re.search(PATTERN, str(DATAS))
 
-if not is_good.group():
+try:
+    if is_good.group():
+        pass
+except Exception:
     message = f"{TIMESTAMP} - {LOCAL_IP} Warning - Lint has to be done"
     url = 'https://in.logs.betterstack.com'
     betterstack_token = os.getenv('BETTERSTACK_SOURCE_TOKEN')
