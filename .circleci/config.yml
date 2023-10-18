@@ -63,7 +63,12 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run flake8
-          command: flake8 --exit-zero --statistics
+          command: flake8
+      - run:
+          name: Display warning if flake8 fails
+          command: echo "Flake8 raised errors" && exit 0
+          when: on_fail
+
   build_and_publish:
     docker:
       - image: docker:17.05.0-ce-git
