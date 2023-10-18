@@ -13,7 +13,9 @@ workflows:
               ignore:
                 - amelioration/lint_flake8_readme
       - lint:
-         filters:
+          requires:
+            - test
+          filters:
             branches:
               ignore:
                 - amelioration/lint_flake8_readme
@@ -24,10 +26,14 @@ workflows:
           filters:
             branches:
                only:
-                - master
+                - development
       - deploy:
           requires:
             - build_and_publish
+          filters:
+            branches:
+               only:
+                - master
 
 jobs:
   test:
