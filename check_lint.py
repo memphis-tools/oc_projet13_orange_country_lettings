@@ -10,8 +10,10 @@ TIMESTAMP = datetime.today().strftime("%Y-%m-%d %h:%M:%S")
 DATAS = ''
 
 
-with open("flake8_rapport/index.html", "r") as fd:
+with open("./flake8_rapport/index.html", "r") as fd:
     DATAS = fd.readlines()
+
+print(f"DATAS SIR: {DATAS}")
 
 is_good = re.search(PATTERN, str(DATAS))
 
