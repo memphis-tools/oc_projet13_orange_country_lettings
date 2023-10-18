@@ -23,8 +23,8 @@ except Exception:
     url = 'https://in.logs.betterstack.com'
     betterstack_token = os.getenv('BETTERSTACK_SOURCE_TOKEN')
     headers = {
-        "Content-Type": "application/json; charset=utf-8",
-        "Authorization": f"Bearer {betterstack_token}"
+        "Content-Type": "application/json; Authorization": f"Bearer {betterstack_token}"
     }
     body = {'message': message}
     requests.post(url, json = body)
+    print("Lint error logged")
