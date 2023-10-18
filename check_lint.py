@@ -2,10 +2,11 @@ import os
 import re
 import requests
 import socket
-
+from datetime import datetime
 
 LOCAL_IP = socket.gethostbyname(socket.gethostname())
 PATTERN = 'id="all-good"'
+TIMESTAMP = datetime.today().strftime("%Y-%m-%d %h:%M:%S")
 DATAS = ''
 
 
@@ -15,7 +16,7 @@ with open("flake8_rapport/index.html", "r") as fd:
 is_good = re.search(PATTERN, str(DATAS))
 
 if not is_good.group():
-    message = f"{LOCAL_IP} Warning - Lint has to be done"
+    message = f"{TIMESTAMP} - {LOCAL_IP} Warning - Lint has to be done"
     url = 'https://in.logs.betterstack.com'
     betterstack_token = os.getenv('BETTERSTACK_SOURCE_TOKEN')
     headers = {
