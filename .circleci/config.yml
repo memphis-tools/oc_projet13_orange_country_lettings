@@ -27,6 +27,7 @@ workflows:
             branches:
                only:
                 - development
+                - master
       - deploy:
           requires:
             - build_and_publish
