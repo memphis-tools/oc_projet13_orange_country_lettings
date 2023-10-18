@@ -5,10 +5,15 @@ import socket
 
 LOGGER = logtail_handler.logger
 LOCAL_IP = socket.gethostbyname(socket.gethostname())
-PATTERN='id="all-good"'
+PATTERN = 'id="all-good"'
+DATAS = ''
 
 
-is_good = re.search(PATTERN, str(datas))
+with open("flake8_rapport/index.html", "r") as fd:
+    DATAS = fd.readlines()
+
+is_good = re.search(PATTERN, str(DATAS))
+
 if not is_good.group():
-    message = "Warning - Lint has to be done"
+    message = f"{LOCAL_IP} Warning - Lint has to be done"
     LOGGER.error(message)
