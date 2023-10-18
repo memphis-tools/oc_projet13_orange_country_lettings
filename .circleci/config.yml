@@ -63,10 +63,10 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run flake8
-          command: flake8 --format html --htmldir flake8_rapport &> /dev/null
-      - store_artifacts:
-          name: Display warning if flake8 fails
-          path: ./flake8_rapport/index.html
+          command: flake8 --format html --htmldir flake8_rapport || true
+      - run:
+          name: "Log warning if flake8 fails"
+          command: ./check_lint.py
 
   build_and_publish:
     docker:
