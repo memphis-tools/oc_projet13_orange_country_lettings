@@ -63,9 +63,9 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run flake8
-          command: flake8 --format html --htmldir flake8_rapport
+          command: flake8 --format html --htmldir flake8_rapport 
       - store_artifacts:
-          path: /tmp/flake8_rapport
+          path: ./flake8_rapport/
           name: Display warning if flake8 fails
 
   build_and_publish:
