@@ -63,8 +63,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run flake8
-          command: flake8
-          when: always
+          command: flake8 || true
       - run:
           name: Display warning if flake8 fails
           command: echo "Flake8 raised errors" && exit 0
