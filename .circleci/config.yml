@@ -72,6 +72,8 @@ jobs:
   build_and_publish:
     docker:
       - image: docker:17.05.0-ce-git
+    environment:
+      GITHUB_LAST_COMMIT_ID: << pipeline.git.tag >>
     steps:
       - checkout
       - setup_remote_docker
@@ -90,7 +92,7 @@ jobs:
           command: echo $CIRCLE_SHA1 
       - run:
           name: test display pipeline.git.tag
-          command: echo "<<pipeline.git.tag>>"
+          command: echo $GITHUB_LAST_COMMIT_ID
       - run:
           name: login to docker_hub
           command: docker login -u memphistools --password $HUB_PASSWORD
