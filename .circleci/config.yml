@@ -73,7 +73,7 @@ jobs:
     docker:
       - image: docker:17.05.0-ce-git
     environment:
-      GITHUB_LAST_COMMIT_ID: << pipeline.git.tag >>
+      GITHUB_LAST_COMMIT_ID: << pipeline.git.base_revision >> - << pipeline.git.revision >>
     steps:
       - checkout
       - setup_remote_docker
