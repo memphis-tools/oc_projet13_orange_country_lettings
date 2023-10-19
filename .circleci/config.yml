@@ -99,10 +99,10 @@ jobs:
           command: docker-compose -f docker-compose.dev.yml build
       - run:
           name: tag nginx image
-          command: docker tag project_nginx:<<pipeline.git.revision>> memphistools/public_repo:oc_projet13_orange_country_lettings_nginx:<<pipeline.git.revision>>
+          command: docker tag project_nginx:latest memphistools/public_repo:oc_projet13_orange_country_lettings_nginx:<<pipeline.git.revision>>
       - run:
           name: tag web image
-          command: docker tag project_web:<<pipeline.git.revision>> memphistools/public_repo:oc_projet13_orange_country_lettings_web:<<pipeline.git.revision>>
+          command: docker tag project_web:latest memphistools/public_repo:oc_projet13_orange_country_lettings_web:<<pipeline.git.revision>>
       - run:
           name: push nginx image on dockerhub
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_nginx
