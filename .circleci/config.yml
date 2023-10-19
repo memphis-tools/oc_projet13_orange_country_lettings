@@ -90,7 +90,7 @@ jobs:
           command: echo $CIRCLE_SHA1 
       - run:
           name: test display pipeline.git.tag
-          command: echo $pipeline.git.tag 
+          command: echo pipeline.git.tag 
       - run:
           name: login to docker_hub
           command: docker login -u memphistools --password $HUB_PASSWORD
