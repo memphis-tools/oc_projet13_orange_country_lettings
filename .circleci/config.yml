@@ -73,7 +73,7 @@ jobs:
     docker:
       - image: docker:17.05.0-ce-git
     environment:
-      GITHUB_LAST_COMMIT_ID: <<pipeline.git.revision>>[0,8]
+      GITHUB_LAST_COMMIT_ID: <<pipeline.git.revision>>
     steps:
       - checkout
       - setup_remote_docker
@@ -89,7 +89,7 @@ jobs:
               docker-compose==1.12.0
       - run:
           name: test display pipeline.git.tag
-          command: echo $GITHUB_LAST_COMMIT_ID
+          command: echo $GITHUB_LAST_COMMIT_ID[0,8]
       - run:
           name: login to docker_hub
           command: docker login -u memphistools --password $HUB_PASSWORD
