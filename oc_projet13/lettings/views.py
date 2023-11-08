@@ -7,7 +7,7 @@ import socket
 LOGGER = logtail_handler.logger
 LOCAL_IP = socket.gethostbyname(socket.gethostname())
 
-DUMMY_VAR_TO_TEST_FLAKE = "ThisMuStBeAVeryVeryVeryLongStringToAllowAGoodTestForFlake8"
+DUMMY_VAR_TO_TEST_FLAKE = "ThisMuStBeAVeryVeryVeryLongStringToAllowAGoodTestForFlake8DuringCicdChainRightSoLetsTryItOutOkayGoSir"
 
 
 def index(request):
