@@ -4,7 +4,7 @@ Exploration code, app lettings
 Lettings Models
 ---------------
 
-.. automodule:: lettings.models
+.. currentmodule:: lettings.models
 
 .. autoclass:: Address
 
@@ -13,7 +13,7 @@ Lettings Models
 Lettings Views
 ---------------
 
-.. automodule:: lettings.views
+.. currentmodule:: lettings.views
 
 .. autofunction:: index
 
