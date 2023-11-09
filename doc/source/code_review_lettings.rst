@@ -4,7 +4,7 @@ Exploration code, app lettings
 Lettings Models
 ---------------
 
-.. automodule:: lettings.models
+.. automodule:: oc_projet13.lettings.models
     :members:
     :undoc-members:
     :show-inheritance:
@@ -13,9 +13,9 @@ Lettings Models
 
 Lettings Views
 --------------
-.. currentmodule:: lettings.views
+.. currentmodule:: oc_projet13.lettings.views
 
-.. automodule:: lettings.views
+.. automodule:: oc_projet13.lettings.views
     :members:
     :undoc-members:
     :show-inheritance:
