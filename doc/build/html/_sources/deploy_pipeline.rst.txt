@@ -13,6 +13,10 @@ Toute mise à jour de branche autre que master provoque génération d'un pipeli
 
 - test, lint.
 
-**Toute mise à jour de la seule branche master provoque génération d'un pipeline avec build**:
+Toute mise à jour de branche development provoque le build (mise à jour image sur DockerHub):
 
-- test, lint, build (avec mise à jour image sur DockerHub). redéploiement de l'application sur Render.
+- test, lint, build
+
+**Toute mise à jour de la seule branche master provoque génération d'un pipeline avec republication de l'application en ligne**:
+
+- test, lint, build (avec mise à jour image sur DockerHub). et publish redéploiement de l'application sur Render.

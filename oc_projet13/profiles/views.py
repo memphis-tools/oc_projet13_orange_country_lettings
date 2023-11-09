@@ -22,8 +22,11 @@ def index(request):
 
 def profile(request, username):
     """Return the template named profiles/profile.html which is the detail view of profile instance.
+
     Keyword arguments:
+    
     request -- default Django object
+
     username -- string, name of user
     """
     try:

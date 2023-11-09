@@ -26,7 +26,9 @@ def letting(request, letting_id):
     """Return the template named lettings/letting.html
     which is the detail view of letting instance.
     Keyword arguments:
+
     request -- default Django object
+    
     letting_id -- integer, id of the letting instance
     """
     try:

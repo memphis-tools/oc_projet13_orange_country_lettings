@@ -84,6 +84,8 @@
 <span class="n">LOGGER</span> <span class="o">=</span> <span class="n">logtail_handler</span><span class="o">.</span><span class="n">logger</span>
 <span class="n">LOCAL_IP</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">gethostname</span><span class="p">())</span>
 
+<span class="n">DUMMY_VAR_TO_TEST_FLAKE</span> <span class="o">=</span> <span class="s2">&quot;ThisMuStBeAVeryVeryVeryLongStringToAllowAGoodTestForFlake8&quot;</span>
+
 
 <div class="viewcode-block" id="index">
 <a class="viewcode-back" href="../../code_review_lettings.html#lettings.views.index">[docs]</a>
@@ -106,7 +108,9 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the template named lettings/letting.html</span>
 <span class="sd">    which is the detail view of letting instance.</span>
 <span class="sd">    Keyword arguments:</span>
+
 <span class="sd">    request -- default Django object</span>
+<span class="sd">    </span>
 <span class="sd">    letting_id -- integer, id of the letting instance</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
