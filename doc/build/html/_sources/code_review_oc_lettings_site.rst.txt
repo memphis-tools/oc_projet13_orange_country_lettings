@@ -6,9 +6,7 @@ OC Lettings Site Views
 
 .. currentmodule:: oc_lettings_site.views
 
--- autosummary_generate::
-
-.. autosummary::
+-- autofunction:: index
 
 Views
 -----
