@@ -13,7 +13,7 @@ Lettings Models
 
 Lettings Views
 --------------
-.. currentmodule:: lettings.views
+.. currentmodule:: oc_projet13.lettings.views
 
 The index function
 ------------------
