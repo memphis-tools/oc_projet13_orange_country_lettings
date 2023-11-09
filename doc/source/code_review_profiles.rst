@@ -16,3 +16,5 @@ Profiles Views
 
 -- autofunction::
    :members:
+
+-- automethod:: index
