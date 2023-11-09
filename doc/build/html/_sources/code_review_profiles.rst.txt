@@ -17,7 +17,7 @@ Profiles Views
    :show-inheritance:
    :imported-members:
 
--- autofunction::
+-- autofunction:: index
    :members:
    :imported-members:
 
