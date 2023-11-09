@@ -236,6 +236,67 @@ object the first time, the query is executed.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.MaxValueValidator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">MaxValueValidator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django/core/validators.html#MaxValueValidator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.MaxValueValidator" title="Link to this definition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseValidator</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.models.MaxValueValidator.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'max_value'</span></em><a class="headerlink" href="#lettings.models.MaxValueValidator.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.models.MaxValueValidator.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django/core/validators.html#MaxValueValidator.compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.MaxValueValidator.compare" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.models.MaxValueValidator.deconstruct">
+<span class="sig-name descname"><span class="pre">deconstruct</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lettings.models.MaxValueValidator.deconstruct" title="Link to this definition"></a></dt>
+<dd><p>Return a 3-tuple of class import path, positional arguments,
+and keyword arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.models.MaxValueValidator.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Ensure</span> <span class="pre">this</span> <span class="pre">value</span> <span class="pre">is</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">or</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">%(limit_value)s.'</span></em><a class="headerlink" href="#lettings.models.MaxValueValidator.message" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">MinLengthValidator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django/core/validators.html#MinLengthValidator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.MinLengthValidator" title="Link to this definition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseValidator</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django/core/validators.html#MinLengthValidator.clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.MinLengthValidator.clean" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator.code">
+<span class="sig-name descname"><span class="pre">code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'min_length'</span></em><a class="headerlink" href="#lettings.models.MinLengthValidator.code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django/core/validators.html#MinLengthValidator.compare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.MinLengthValidator.compare" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator.deconstruct">
+<span class="sig-name descname"><span class="pre">deconstruct</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lettings.models.MinLengthValidator.deconstruct" title="Link to this definition"></a></dt>
+<dd><p>Return a 3-tuple of class import path, positional arguments,
+and keyword arguments.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.models.MinLengthValidator.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#lettings.models.MinLengthValidator.message" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-lettings.views">
 <span id="lettings-views"></span><h2>Lettings Views<a class="headerlink" href="#module-lettings.views" title="Link to this heading"></a></h2>
@@ -251,9 +312,9 @@ which is the index for lettings sub-application.</p>
 <span class="sig-prename descclassname"><span class="pre">lettings.views.</span></span><span class="sig-name descname"><span class="pre">letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letting_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lettings/views.html#letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.views.letting" title="Link to this definition"></a></dt>
 <dd><p>Return the template named lettings/letting.html
 which is the detail view of letting instance.
-Keyword arguments:
-request – default Django object
-letting_id – integer, id of the letting instance</p>
+Keyword arguments:</p>
+<p>request – default Django object</p>
+<p>letting_id – integer, id of the letting instance</p>
 </dd></dl>
 
 </section>

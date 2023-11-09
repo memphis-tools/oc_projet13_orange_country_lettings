@@ -13,8 +13,12 @@ Profiles Models
 
 Profiles Views
 --------------
-.. automodule:: profiles.views
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :private-members:
+.. currentmodule:: profiles.views
+
+The index function
+------------------
+.. autofunction:: index
+
+The profile function
+--------------------
+.. autofunction:: profile

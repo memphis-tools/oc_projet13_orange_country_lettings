@@ -9,3 +9,4 @@ OC Lettings Site Views
     :undoc-members:
     :show-inheritance:
     :private-members:
+    :imported-members:
