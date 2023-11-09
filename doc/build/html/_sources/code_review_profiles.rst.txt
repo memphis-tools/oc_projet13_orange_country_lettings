@@ -12,5 +12,5 @@ Profiles Models
     :imported-members:
 
 
-.. automodule:: profiles.views
-    :members:
+.. currentmodule: oc_lettings_site.views
+   .. autofunction:: views.index
