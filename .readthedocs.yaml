@@ -31,3 +31,7 @@ python:
    install:
    - requirements: doc/requirements.txt
    - requirements: oc_projet13/requirements.txt
+   - method: pip
+      path: .
+      extra_requirements:
+        - doc
