@@ -15,10 +15,5 @@ Profiles Views
 --------------
 .. currentmodule:: profiles.views
 
-The index function
-------------------
-.. autofunction:: index
-
-The profile function
---------------------
-.. autofunction:: profile
+.. automodule:: profiles.views
+    :members:

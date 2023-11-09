@@ -1,9 +1,14 @@
 Exploration code, app OC lettings site
-=======================================
+=========================================
 
 OC Lettings Site Views
 ----------------------
 
-.. currentmodule:: oc_projet13.oc_lettings_site.views
+.. automodule:: oc_lettings_site.views
     :members:
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
     :imported-members:
+
+.. currentmodule:: oc_lettings_site.views

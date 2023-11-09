@@ -15,11 +15,5 @@ Lettings Views
 --------------
 .. currentmodule:: lettings.views
 
-The index function
-------------------
 .. automodule:: lettings.views
     :members:
-
-.. autofunction:: index
-
-.. autofunction:: letting
