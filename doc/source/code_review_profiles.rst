@@ -11,7 +11,7 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. currentmodule:: views
+.. currentmodule:: profiles.views
 
 .. autofunction:: index
 
