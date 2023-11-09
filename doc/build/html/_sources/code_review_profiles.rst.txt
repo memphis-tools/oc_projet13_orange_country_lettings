@@ -14,8 +14,11 @@ Profiles Views
 
 .. automodule:: profiles
    :members:
+   :show-inheritance:
+   :imported-members:
 
 -- autofunction::
    :members:
+   :imported-members:
 
 -- automethod:: index
