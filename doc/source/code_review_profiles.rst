@@ -12,7 +12,7 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. automodule:: profiles.views
+.. automodule:: profiles
    :members:
 
 -- autofunction::
