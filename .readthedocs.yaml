@@ -31,4 +31,4 @@ sphinx:
 python:
   install:
    - method: pip
-   - requirements: doc/requirements.txt
+     requirements: doc/requirements.txt
