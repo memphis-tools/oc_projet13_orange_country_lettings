@@ -11,6 +11,7 @@ import django
 import sphinx_rtd_theme
 
 
+sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles"))
 sys.path.insert(0, os.path.abspath("../../oc_projet13"))
 os.environ["DJANGO_SETTINGS_MODULE"] = "oc_lettings_site.settings"
 os.environ["DJANGO_ALLOWED_HOSTS"] = "localhost"
