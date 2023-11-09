@@ -17,3 +17,7 @@ Lettings Views
 
 .. automodule:: lettings.views
     :members:
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+    :imported-members:
