@@ -14,4 +14,5 @@ Profiles Views
 
 .. currentmodule:: profiles.views
 
-.. autofunction:: index
+-- autofunction::
+   :members:
