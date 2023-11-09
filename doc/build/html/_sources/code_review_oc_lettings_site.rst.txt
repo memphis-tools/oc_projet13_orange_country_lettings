@@ -6,10 +6,5 @@ OC Lettings Site Views
 
 .. currentmodule:: oc_lettings_site.views
 
-.. toctree::
-     :glob:
-
--- autofunction:: index
-
 Views
 -----
