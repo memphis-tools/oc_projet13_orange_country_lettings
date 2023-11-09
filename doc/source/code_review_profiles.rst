@@ -12,7 +12,8 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. currentmodule:: profiles.views
+.. automodule:: profiles.views
+   :members:
 
 -- autofunction::
    :members:
