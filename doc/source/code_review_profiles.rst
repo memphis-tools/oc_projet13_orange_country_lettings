@@ -4,13 +4,15 @@ Exploration code, app profiles
 Profiles Models
 ---------------
 
-.. automodule:: profiles.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :private-members:
-    :imported-members:
+.. currentmodule:: profiles.models
 
+.. autoclass:: Profile
 
-.. currentmodule: oc_lettings_site.views
-   .. autofunction:: views.index
+Profiles Views
+---------------
+
+.. currentmodule:: profiles.views
+
+.. autofunction:: index
+
+.. autofunction:: profile

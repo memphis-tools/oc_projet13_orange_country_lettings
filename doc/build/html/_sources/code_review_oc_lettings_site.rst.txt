@@ -4,10 +4,15 @@ Exploration code, app OC lettings site
 OC Lettings Site Views
 ----------------------
 
-.. currentmodule: oc_lettings_site.views
+.. currentmodule:: oc_lettings_site.views
 
-.. autofunction:: oc_lettings_site.views.index
+Views
+-----
 
-.. autofunction:: oc_lettings_site.views.handler404
+.. currentmodule:: oc_lettings_site.views
 
-.. autofunction:: oc_lettings_site.views.handler500
+.. autofunction:: index
+
+.. autofunction:: handler404
+
+.. autofunction:: handler500
