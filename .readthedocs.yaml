@@ -32,6 +32,6 @@ sphinx:
 
 python:
   install:
-   - requirements: doc/requirements.txt
    - method: pip
+   - requirements: doc/requirements.txt
   system_packages: true
