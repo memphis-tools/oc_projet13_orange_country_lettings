@@ -4,14 +4,14 @@ Exploration code, app profiles
 Profiles Models
 ---------------
 
-.. currentmodule:: profiles.models
+.. automodule:: profiles.models
 
 .. autoclass:: Profile
 
 Profiles Views
 ---------------
 
-.. currentmodule:: profiles.views
+.. automodule:: profiles.views
 
 .. autofunction:: index
 
