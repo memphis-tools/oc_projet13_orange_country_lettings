@@ -19,3 +19,5 @@ Lettings Views
 
 -- autofunction:: index
    :annotation:
+
+   .. method:: index

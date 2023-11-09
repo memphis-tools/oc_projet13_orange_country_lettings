@@ -14,4 +14,4 @@ Views
      :glob:
 
 -- autofunction:: index
-   :annotation:
+   .. method:: index
