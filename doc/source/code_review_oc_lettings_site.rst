@@ -10,5 +10,3 @@ OC Lettings Site Views
     :show-inheritance:
     :private-members:
     :imported-members:
-
-.. currentmodule:: oc_lettings_site.views
