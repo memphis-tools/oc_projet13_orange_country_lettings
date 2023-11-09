@@ -17,6 +17,7 @@ C'est le projet13 du cycle Développeur d'application en Python de l'organisme.
 .. toctree::
     :caption: Index
     :titlesonly:
+    :maxdepth: 3
 
     prerequis
     developpement
