@@ -7,3 +7,5 @@ Profiles Models
 .. currentmodule:: profiles
 
 .. autosummary::
+
+.. autofunction:: profiles.views.index
