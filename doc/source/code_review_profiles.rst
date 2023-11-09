@@ -4,7 +4,7 @@ Exploration code, app profiles
 Profiles Models
 ---------------
 
-.. automodule:: oc_projet13.profiles.models
+.. automodule:: profiles.models
     :members:
     :undoc-members:
     :show-inheritance:
@@ -13,9 +13,9 @@ Profiles Models
 
 Profiles Views
 --------------
-.. currentmodule:: oc_projet13.profiles.views
+.. currentmodule:: profiles.views
 
-.. automodule:: oc_projet13.profiles.views
+.. automodule:: profiles.views
     :members:
     :undoc-members:
     :show-inheritance:
