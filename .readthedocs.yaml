@@ -30,8 +30,9 @@ sphinx:
 
 python:
   install:
-  - method: pip
-     path: .
-     extra_requirements: doc
-  - requirements: oc_projet13/requirements.txt
-  - requirements: doc/requirements.txt
+    - method: pip
+       path: .
+       extra_requirements:
+         - doc
+    - requirements: oc_projet13/requirements.txt
+    - requirements: doc/requirements.txt
