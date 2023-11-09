@@ -11,9 +11,6 @@ Profiles Models
     :private-members:
     :imported-members:
 
-Profiles Views
---------------
 
-.. autofunction:: profiles.views.index
-
-.. autofunction:: profiles.views.profile
+.. automodule:: profiles.views
+    :members:
