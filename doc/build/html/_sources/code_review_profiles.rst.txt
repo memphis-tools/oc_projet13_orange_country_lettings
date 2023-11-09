@@ -9,7 +9,7 @@ Profiles Models
     :undoc-members:
     :show-inheritance:
     :private-members:
-
+    :imported-members:
 
 Profiles Views
 --------------
