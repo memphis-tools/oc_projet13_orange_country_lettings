@@ -12,9 +12,3 @@ Lettings Models
 
 Lettings Views
 ---------------
-
-.. currentmodule:: lettings.views
-
-.. autofunction:: index
-
-.. autofunction:: letting
