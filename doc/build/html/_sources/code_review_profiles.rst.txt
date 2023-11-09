@@ -4,8 +4,16 @@ Exploration code, app profiles
 Profiles Models
 ---------------
 
-.. currentmodule:: profiles
+.. automodule:: profiles.models
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+    :imported-members:
 
-.. autosummary::
+Profiles Views
+--------------
 
 .. autofunction:: profiles.views.index
+
+.. autofunction:: profiles.views.profile
