@@ -4,13 +4,17 @@ Exploration code, app lettings
 Lettings Models
 ---------------
 
-.. automodule:: lettings.models
-    :members:
-    :undoc-members:
-    :show-inheritance:
-    :private-members:
-    :imported-members:
+.. currentmodule:: lettings.models
 
+.. autoclass:: Address
 
-.. currentmodule: oc_lettings_site.views
-   .. autofunction:: views.index
+.. autoclass:: Letting
+
+Lettings Views
+---------------
+
+.. currentmodule:: lettings.views
+
+.. autofunction:: index
+
+.. autofunction:: letting

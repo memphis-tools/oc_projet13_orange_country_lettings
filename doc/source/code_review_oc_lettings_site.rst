@@ -6,4 +6,13 @@ OC Lettings Site Views
 
 .. currentmodule:: oc_lettings_site.views
 
+Views
+-----
+
+.. currentmodule:: oc_lettings_site.views
+
 .. autofunction:: index
+
+.. autofunction:: handler404
+
+.. autofunction:: handler500
