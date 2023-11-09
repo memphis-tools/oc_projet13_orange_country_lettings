@@ -9,16 +9,11 @@ Profiles Models
     :undoc-members:
     :show-inheritance:
     :private-members:
-
+    :imported-members:
 
 Profiles Views
 --------------
 .. currentmodule:: profiles.views
 
-The index function
-------------------
-.. autofunction:: index
-
-The profile function
---------------------
-.. autofunction:: profile
+.. automodule:: profiles.views
+    :members:
