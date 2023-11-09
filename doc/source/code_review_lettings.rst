@@ -10,3 +10,6 @@ Lettings Models
     :show-inheritance:
     :private-members:
     :imported-members:
+
+.. automodule:: lettings.views
+    :members:
