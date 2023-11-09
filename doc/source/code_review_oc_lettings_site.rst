@@ -8,6 +8,6 @@ OC Lettings Site Views
 
 .. autofunction:: index
 
-.. autofunction:: oc_lettings_site.views.handler404
+.. autofunction:: handler404
 
-.. autofunction:: oc_lettings_site.views.handler500
+.. autofunction:: handler500
