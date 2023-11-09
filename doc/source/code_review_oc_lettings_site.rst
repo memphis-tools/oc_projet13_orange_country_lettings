@@ -9,7 +9,7 @@ OC Lettings Site Views
 Views
 -----
 
-.. currentmodule:: oc_lettings_site.views
+.. automodule:: oc_lettings_site.views
 
 .. autofunction:: index
 
