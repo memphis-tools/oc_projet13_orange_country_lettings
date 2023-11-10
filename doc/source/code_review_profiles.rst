@@ -15,5 +15,4 @@ Profiles Views
 
 .. currentmodule:: profiles.views
 
--- autofunction::
-   .. method:: index
+.. method:: index
