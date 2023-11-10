@@ -13,3 +13,7 @@ Views
 -- autofunction::
    .. method:: index
      :annotation:
+
+   .. method:: handler404
+
+   .. method:: handler500
