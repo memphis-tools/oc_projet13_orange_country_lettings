@@ -8,9 +8,13 @@ Lettings Models
 
 .. autoclass:: Address
    :members:
+   :show-inheritance:
+   :private-members:
 
 .. autoclass:: Letting
    :members:
+   :show-inheritance:
+   :private-members:
 
 Lettings
 --------

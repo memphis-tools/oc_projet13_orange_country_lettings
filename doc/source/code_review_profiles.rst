@@ -8,6 +8,8 @@ Profiles Models
 
 .. autoclass:: Profile
    :members:
+   :show-inheritance:
+   :private-members:
 
 
 Profiles Views
