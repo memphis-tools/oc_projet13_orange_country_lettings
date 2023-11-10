@@ -10,8 +10,7 @@ Profiles Models
    :members:
    :show-inheritance:
    :private-members:
-   
-   .. method:: profile
+   :inherited-members:
 
 
 Profiles Views
@@ -19,6 +18,6 @@ Profiles Views
 
 .. currentmodule:: profiles.views
 
-.. function:: index
+.. autofunction:: index
 
 .. method:: profile
