@@ -5,6 +5,7 @@ Profiles Models
 ---------------
 
 .. automodule:: profiles.models
+   :no-undoc-members:
 
 .. autoclass:: Profile
    :members:
