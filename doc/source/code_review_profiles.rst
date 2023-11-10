@@ -10,6 +10,8 @@ Profiles Models
    :members:
    :show-inheritance:
    :private-members:
+   
+   .. method:: profile
 
 
 Profiles Views
