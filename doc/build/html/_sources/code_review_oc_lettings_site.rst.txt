@@ -10,8 +10,6 @@ OC Lettings Site Views
 Views
 -----
 
--- autofunction::
-   .. method:: index
-     :annotation:
-   .. method:: handler404
-   .. method:: handler500
+.. method:: index
+.. method:: handler404
+.. method:: handler500
