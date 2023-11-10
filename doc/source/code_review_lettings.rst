@@ -18,12 +18,6 @@ Lettings
 --------
 .. currentmodule:: lettings.views
 
-.. lettings.views
-   :data:
-   :no-index:
-
 .. function:: letting
-   :no-index:
 
 .. function:: index
-   :no-index:
