@@ -6,6 +6,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/memphis-tools/oc_projet13_orange_country_lettings/badge.svg?branch=fonctionnalite/circleci_ci_cd)](https://coveralls.io/github/memphis-tools/oc_projet13_orange_country_lettings?branch=fonctionnalite/circleci_ci_cd)
 ![Screenshot](https://img.shields.io/badge/readthedocs--blue?logo=readthedocs&logoColor=yellow)
 [![Documentation Status](https://readthedocs.org/projects/oc-projet13-orange-country-lettings/badge/?version=latest)](https://oc-projet13-orange-country-lettings.readthedocs.io/fr/latest/?badge=latest)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/memphis-tools/oc_projet13_orange_country_lettings/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/memphis-tools/oc_projet13_orange_country_lettings/tree/master)
 
 # [OpenClassRoom](https://openclassrooms.com/) - Parcours développeur Python
 ![Screenshot](oc_parcours_dev_python.png)
