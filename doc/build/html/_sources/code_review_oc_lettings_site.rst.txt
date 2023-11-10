@@ -12,3 +12,4 @@ Views
 
 -- autofunction::
    .. method:: index
+     :annotation:
