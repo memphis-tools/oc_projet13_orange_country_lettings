@@ -28,5 +28,5 @@ C'est le projet13 du cycle Développeur d'application en Python de l'organisme.
 
 Lettings controller
 ===================
-.. automodule:: lettings.views
+.. automodule:: lettings
    :members:
