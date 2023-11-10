@@ -5,8 +5,6 @@ Profiles Models
 ---------------
 
 .. automodule:: profiles.models
-   :members:
-   :no-index:
 
 .. autoclass:: Profile
    :members:
