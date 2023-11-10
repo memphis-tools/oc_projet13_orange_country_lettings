@@ -13,5 +13,7 @@ Views
     :method:
 
 .. method:: index
+   -- autosummary::
+   
 .. method:: handler404
 .. method:: handler500
