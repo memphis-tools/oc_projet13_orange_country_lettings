@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>oc_lettings_site.views &mdash; Documentation oc_projet13 05-10-2023</title>
+  <title>profiles.views &mdash; Documentation oc_projet13 05-10-2023</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -66,7 +66,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Code du module</a></li>
-      <li class="breadcrumb-item active">oc_lettings_site.views</li>
+      <li class="breadcrumb-item active">profiles.views</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -75,9 +75,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Code source de oc_lettings_site.views</h1><div class="highlight"><pre>
+  <h1>Code source de profiles.views</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
 <span class="kn">import</span> <span class="nn">logtail_handler</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Profile</span>
 <span class="kn">import</span> <span class="nn">socket</span>
 
 
@@ -86,34 +87,38 @@
 
 
 <div class="viewcode-block" id="index">
-<a class="viewcode-back" href="../../code_review_oc_lettings_site.html#oc_lettings_site.views.index">[docs]</a>
+<a class="viewcode-back" href="../../code_review_profiles_views.html#profiles.views.index">[docs]</a>
 <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the template named index.html which is the main index for application.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the template named profiles/index.html</span>
+<span class="sd">    which is the index for profiles sub-application.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;index.html&quot;</span><span class="p">)</span>
+        <span class="n">profiles_list</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;profiles_list&quot;</span><span class="p">:</span> <span class="n">profiles_list</span><span class="p">,</span> <span class="s2">&quot;user_ip&quot;</span><span class="p">:</span> <span class="n">LOCAL_IP</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;profiles/index.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-        <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Erreur - Page &#39;index.html&#39; non trouvée&quot;</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error - Page&#39;profiles/index.html&#39; not found&quot;</span>
         <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
 
 
 
-<div class="viewcode-block" id="handler404">
-<a class="viewcode-back" href="../../code_review_oc_lettings_site.html#oc_lettings_site.views.handler404">[docs]</a>
-<span class="k">def</span> <span class="nf">handler404</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">exception</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a custom 400 error HTML page.&quot;&quot;&quot;</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error_code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="s2">&quot;user_ip&quot;</span><span class="p">:</span> <span class="n">LOCAL_IP</span><span class="p">}</span>
-    <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;error.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span></div>
+<div class="viewcode-block" id="profile">
+<a class="viewcode-back" href="../../code_review_profiles_views.html#profiles.views.profile">[docs]</a>
+<span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the template named profiles/profile.html which is the detail view of profile instance.</span>
 
+<span class="sd">    Keyword arguments:</span>
+<span class="sd">    </span>
+<span class="sd">    request -- default Django object</span>
 
-
-<div class="viewcode-block" id="handler500">
-<a class="viewcode-back" href="../../code_review_oc_lettings_site.html#oc_lettings_site.views.handler500">[docs]</a>
-<span class="k">def</span> <span class="nf">handler500</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a custom 500 error HTML page.&quot;&quot;&quot;</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;error_code&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;request&quot;</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span> <span class="s2">&quot;user_ip&quot;</span><span class="p">:</span> <span class="n">LOCAL_IP</span><span class="p">}</span>
-    <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;error.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span></div>
+<span class="sd">    username -- string, name of user</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user__username</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;profile&quot;</span><span class="p">:</span> <span class="n">profile</span><span class="p">,</span> <span class="s2">&quot;user_ip&quot;</span><span class="p">:</span> <span class="n">LOCAL_IP</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;profiles/profile.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error - Username </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2"> not found&quot;</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
 
 </pre></div>
 

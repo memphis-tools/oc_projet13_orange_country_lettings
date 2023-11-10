@@ -1,5 +1,5 @@
 Exploration code, app profiles
-=================================
+===============================
 
 Profiles Models
 ---------------
@@ -8,14 +8,3 @@ Profiles Models
 
 .. autoclass:: Profile
    :members:
-
-
-Profiles Views
----------------
-
-.. automodule:: profiles
-   :inherited-members:
-   :members:
-
-.. method:: profile
-   :no-index:
