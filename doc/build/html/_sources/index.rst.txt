@@ -24,5 +24,7 @@ C'est le projet13 du cycle Développeur d'application en Python de l'organisme.
     deploiement
     code_review_lettings
     code_review_profiles
-    code_review_profiles_views.rst
     code_review_oc_lettings_site
+
+.. automodule:: lettings.models
+    :members:
