@@ -12,8 +12,9 @@ Profiles Models
 Profiles Views
 ---------------
 
--- autofunction:: index
-   :members:
-   :imported-members:
+.. currentmodule:: profiles.views
 
--- automethod:: index
+-- autofunction::
+   .. method:: index
+
+.. autosummary::
