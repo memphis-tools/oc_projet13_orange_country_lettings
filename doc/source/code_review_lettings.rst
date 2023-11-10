@@ -16,6 +16,7 @@ Lettings
 --------
 .. currentmodule:: lettings.views
 
-.. function:: index
+.. lettings.views
+   :data:
 
-.. autofunction:: letting
+.. function:: letting
