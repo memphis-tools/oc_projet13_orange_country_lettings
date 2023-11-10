@@ -13,7 +13,7 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. automodule:: profiles.views
+.. automodule:: profiles
    :inherited-members:
    :members:
 
