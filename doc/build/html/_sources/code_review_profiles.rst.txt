@@ -16,6 +16,4 @@ Profiles Views
 
 -- autofunction::
    .. method:: index
-
--- autofunction::
    .. method:: profile
