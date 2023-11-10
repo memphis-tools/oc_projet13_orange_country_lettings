@@ -8,3 +8,13 @@ Profiles Models
 
 .. autoclass:: Profile
    :members:
+
+
+Profiles Views
+---------------
+
+.. currentmodule:: profiles.views
+
+.. method:: index
+
+.. method:: profile
