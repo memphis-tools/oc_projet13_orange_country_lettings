@@ -5,8 +5,6 @@ OC Lettings Site Views
 ----------------------
 
 .. automodule:: oc_lettings_site
-   :members:
-   :no-index:
    :no-undoc-members:
 
 .. function:: index
