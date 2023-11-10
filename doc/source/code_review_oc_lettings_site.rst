@@ -11,7 +11,6 @@ Views
 -----
 
 .. method:: index
-   :annotation:
 
 .. method:: handler404
 
