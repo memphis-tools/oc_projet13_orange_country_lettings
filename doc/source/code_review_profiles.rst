@@ -10,14 +10,15 @@ Profiles Models
    :members:
    :show-inheritance:
    :private-members:
-   
-   .. method:: profile
+   :inherited-members
 
 
 Profiles Views
 ---------------
 
 .. currentmodule:: profiles.views
+   :members:
+   :show-inheritance:
 
 .. function:: index
 
