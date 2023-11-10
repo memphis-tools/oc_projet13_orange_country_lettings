@@ -14,8 +14,7 @@ Lettings Models
 
 Lettings
 --------
-.. currentmodule:: lettings.views
 
-.. method:: index
+.. function:: index
 
-.. function:: letting
+.. autofunction:: lettings.views.letting
