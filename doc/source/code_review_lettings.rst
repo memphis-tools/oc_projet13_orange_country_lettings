@@ -19,3 +19,5 @@ Lettings Views
 
 -- autofunction::
    .. method:: index
+   
+   :members:

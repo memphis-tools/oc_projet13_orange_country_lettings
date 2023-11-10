@@ -9,6 +9,7 @@ Profiles Models
 .. autoclass:: Profile
    :members:
 
+
 Profiles Views
 ---------------
 
@@ -16,4 +17,3 @@ Profiles Views
 
 -- autofunction::
    .. method:: index
-   .. method:: profile
