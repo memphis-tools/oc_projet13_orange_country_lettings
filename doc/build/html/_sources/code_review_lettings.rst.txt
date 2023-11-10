@@ -14,10 +14,11 @@ Lettings Models
 
 Lettings Views
 ---------------
+-- autosummary::
 
 .. currentmodule:: lettings.views
 
 -- autofunction::
    .. method:: index
-   
+
    :members:
