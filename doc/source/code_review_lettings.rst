@@ -8,11 +8,9 @@ Lettings Models
 
 .. autoclass:: Address
    :members:
-   :no-index:
 
 .. autoclass:: Letting
    :members:
-   :no-index:
 
 Lettings
 --------
