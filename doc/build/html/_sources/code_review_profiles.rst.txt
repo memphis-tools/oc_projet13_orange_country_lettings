@@ -12,11 +12,6 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. automodule:: profiles
-   :members:
-   :show-inheritance:
-   :imported-members:
-
 -- autofunction:: index
    :members:
    :imported-members:
