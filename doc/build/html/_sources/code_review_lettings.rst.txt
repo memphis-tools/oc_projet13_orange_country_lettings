@@ -7,6 +7,7 @@ Lettings Models
 .. automodule:: lettings.models
    :members:
    :no-index:
+   :no-undoc-members:
 
 .. autoclass:: Address
    :members:

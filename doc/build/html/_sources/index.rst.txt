@@ -25,12 +25,3 @@ C'est le projet13 du cycle Développeur d'application en Python de l'organisme.
     code_review_lettings
     code_review_profiles
     code_review_oc_lettings_site
-
-.. automodule:: oc_projet13
-   :members:
-
-.. automodule:: lettings
-   :members:
-
-.. automodule:: profiles
-   :members:
