@@ -9,15 +9,13 @@ Lettings Models
 .. autoclass:: Address
    :members:
 
-
 .. autoclass:: Letting
    :members:
 
-
 Lettings
 --------
+.. currentmodule:: lettings.views
 
 .. method:: index
 
-.. automodule:: lettings.views
-    :members:
+.. method:: letting

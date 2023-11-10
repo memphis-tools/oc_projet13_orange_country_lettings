@@ -15,4 +15,4 @@ Profiles Views
 
 .. currentmodule:: profiles.views
 
-.. method:: index
+.. method:: index,profile
