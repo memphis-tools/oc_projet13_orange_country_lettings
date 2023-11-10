@@ -24,3 +24,6 @@ Lettings
 
 .. function:: letting
    :no-index:
+
+.. function:: index
+   :no-index:
