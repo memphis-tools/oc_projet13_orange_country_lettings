@@ -12,12 +12,9 @@ Lettings Models
 .. autoclass:: Letting
    :members:
 
-Lettings Views
----------------
--- autosummary::
-
+Lettings
+--------
 .. currentmodule:: lettings.views
 
 .. method:: index
-
-   :members:
+   -- members:
