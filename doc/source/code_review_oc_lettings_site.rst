@@ -10,7 +10,7 @@ OC Lettings Site Views
 Views
 -----
 
-.. function:: oc_lettings_site.views.index
+.. py:function:: oc_lettings_site.views.index
 
 .. function:: handler404
 
