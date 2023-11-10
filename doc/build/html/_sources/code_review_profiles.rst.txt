@@ -4,7 +4,9 @@ Exploration code, app profiles
 Profiles Models
 ---------------
 
-.. currentmodule:: profiles.models
+.. automodule:: profiles.models
+   :members:
+   :no-index:
 
 .. autoclass:: Profile
    :members:
