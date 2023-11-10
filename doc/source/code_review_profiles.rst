@@ -13,9 +13,9 @@ Profiles Models
 Profiles Views
 ---------------
 
-.. currentmodule:: profiles.views
-
-.. method:: index
-  .. autofunction::
+.. automodule:: profiles.views
+   :inherited-members:
+   :members:
 
 .. method:: profile
+   :no-index:
