@@ -102,6 +102,8 @@
 
 
 
+<div class="viewcode-block" id="letting">
+<a class="viewcode-back" href="../../code_review_lettings.html#lettings.views.letting">[docs]</a>
 <span class="k">def</span> <span class="nf">letting</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">letting_id</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the template named lettings/letting.html</span>
 <span class="sd">    which is the detail view of letting instance.</span>
@@ -121,7 +123,8 @@
         <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;lettings/letting.html&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
         <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error - Page </span><span class="si">{</span><span class="n">letting_id</span><span class="si">}</span><span class="s2"> not found&quot;</span>
-        <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
