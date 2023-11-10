@@ -18,6 +18,6 @@ Profiles Views
 
 .. currentmodule:: profiles.views
 
-.. autofunction:: index
+.. function:: index
 
-.. method:: profile
+.. function:: profile
