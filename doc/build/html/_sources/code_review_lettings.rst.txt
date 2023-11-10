@@ -16,8 +16,3 @@ Lettings Views
 ---------------
 
 .. currentmodule:: lettings.views
-
--- autofunction:: index
-   :annotation:
-
-   .. method:: index
