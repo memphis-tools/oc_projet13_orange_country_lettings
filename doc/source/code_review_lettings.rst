@@ -18,4 +18,4 @@ Lettings
 
 .. method:: index
 
-.. method:: letting
+.. function:: letting
