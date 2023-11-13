@@ -10,7 +10,7 @@ OC Lettings Site Views
    :no-undoc-members:
 
 
-.. currentmodule:: profiles.views
+.. currentmodule:: oc_lettings_site.views
 
 .. autofunction:: index
    :noindex:
