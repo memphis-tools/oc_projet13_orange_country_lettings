@@ -4,7 +4,19 @@ Exploration code, app OC lettings site
 OC Lettings Site Views
 ----------------------
 
-.. automodule:: oc_lettings_site.views
+.. automodule:: oc_lettings_site
    :members:
    :no-index:
    :no-undoc-members:
+
+
+.. currentmodule:: profiles.views
+
+.. autofunction:: index
+   :noindex:
+
+.. autofunction:: handler404
+   :noindex:
+
+.. autofunction:: handler500
+   :noindex:
