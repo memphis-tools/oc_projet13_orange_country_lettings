@@ -6,12 +6,14 @@ Profiles Models
 
 .. automodule:: profiles.models
    :no-undoc-members:
+   :undoc-members:
 
 .. autoclass:: Profile
    :members:
    :show-inheritance:
    :private-members:
    :inherited-members:
+   :special-members:
 
 
 Profiles Views
@@ -21,4 +23,5 @@ Profiles Views
 
 .. function:: index
 
-.. function:: profile
+.. autofunction:: profile
+   :members:
