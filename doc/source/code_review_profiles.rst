@@ -20,9 +20,3 @@ Profiles Views
 ---------------
 
 .. currentmodule:: profiles.views
-
-.. autofunction:: index
-   :noindex:
-
-.. autofunction:: profile
-   :noindex:
