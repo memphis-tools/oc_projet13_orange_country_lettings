@@ -23,5 +23,4 @@ Profiles Views
 
 .. function:: index
 
-.. autofunction:: profile
-   :members:
+.. function:: profile
