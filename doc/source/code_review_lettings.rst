@@ -23,6 +23,8 @@ Lettings
 --------
 .. currentmodule:: lettings.views
 
-.. function:: letting
+.. autofunction:: index
+   :noindex:
 
-.. function:: index
+.. autofunction:: profile
+   :noindex:
