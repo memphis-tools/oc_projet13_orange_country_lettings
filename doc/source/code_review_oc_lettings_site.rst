@@ -17,5 +17,5 @@ OC Lettings Site Views
 .. function:: handler500
 
 
-.. currentmodule:: oc_lettings_site.views
-.. autofunction:: handler500
+.. currentmodule:: oc_lettings_site
+.. autofunction:: views.handler500
