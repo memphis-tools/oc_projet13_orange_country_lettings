@@ -12,4 +12,4 @@ OC Lettings Site Views
 
 .. currentmodule:: oc_lettings_site.views
 
-.. autofunction:: oc_lettings_site.views.index
+.. autofunction:: index
