@@ -23,3 +23,6 @@ Profiles Views
 
 .. autofunction:: index
    :noindex:
+
+.. autofunction:: profile
+   :noindex:
