@@ -10,13 +10,13 @@ OC Lettings Site Views
    :no-undoc-members:
 
 
-.. currentmodule:: oc_lettings_site.views
+.. currentmodule:: oc_lettings_site
 
-.. autofunction:: index
+.. autofunction:: views.index
    :noindex:
 
-.. autofunction:: handler404
+.. autofunction:: views.handler404
    :noindex:
 
-.. autofunction:: handler500
+.. autofunction:: views.handler500
    :noindex:
