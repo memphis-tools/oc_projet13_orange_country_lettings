@@ -1,5 +1,5 @@
 [tool.setuptools.packages.find]
-where = ["./oc_projet13"]
+where = ["."]
 # include = ["lettings", "profile","oc_lettings_site"]
 
 [project]
