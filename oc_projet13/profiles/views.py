@@ -5,6 +5,7 @@ from .models import Profile
 
 LOGGER = logtail_handler.logger
 
+
 def index(request):
     """
     Return the template named profiles/index.html

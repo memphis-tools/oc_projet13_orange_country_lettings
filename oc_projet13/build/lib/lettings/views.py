@@ -28,7 +28,6 @@ def letting(request, letting_id):
     Keyword arguments:
 
     request -- default Django object
-    
     letting_id -- integer, id of the letting instance
     """
     try:
