@@ -6,7 +6,6 @@ Profiles Models
 
 .. automodule:: profiles.models
    :no-undoc-members:
-   :undoc-members:
 
 .. autoclass:: Profile
    :members:
@@ -18,7 +17,6 @@ Profiles Models
 
 Profiles Views
 ---------------
-
 .. currentmodule:: profiles.views
 
 .. autofunction:: index
