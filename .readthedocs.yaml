@@ -35,9 +35,3 @@ python:
     - requirements: oc_projet13/requirements.txt
     - method: pip
       path: oc_projet13
-    - method: pip
-      path: oc_projet13.oc_lettings_site
-    - method: pip
-      path: oc_projet13.profiles
-    - method: pip
-      path: oc_projet13.lettings
