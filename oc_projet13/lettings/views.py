@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from .models import Letting
 import logtail_handler
-import socket
 
 
 LOGGER = logtail_handler.logger
-LOCAL_IP = socket.gethostbyname(socket.gethostname())
 
 DUMMY_VAR_TO_TEST_FLAKE = "ThisMuStBeAVeryVeryVeryLongStringToAllowAGoodTestForFlake8"
 
@@ -15,7 +13,7 @@ def index(request):
     which is the index for lettings sub-application."""
     try:
         lettings_list = Letting.objects.all()
-        context = {"lettings_list": lettings_list, "user_ip": LOCAL_IP}
+        context = {"lettings_list": lettings_list}
         return render(request, "lettings/index.html", context)
     except Exception:
         message = "Error - Page 'lettings/index.html' not found"
@@ -28,15 +26,14 @@ def letting(request, letting_id):
     Keyword arguments:
 
     request -- default Django object
-    
+
     letting_id -- integer, id of the letting instance
     """
     try:
         letting = Letting.objects.get(id=letting_id)
         context = {
             "title": letting.title,
-            "address": letting.address,
-            "user_ip": LOCAL_IP,
+            "address": letting.address
         }
         return render(request, "lettings/letting.html", context)
     except Exception:

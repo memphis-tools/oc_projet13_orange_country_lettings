@@ -2,12 +2,10 @@ import os
 import re
 import json
 import requests
-import socket
 import urllib3
 from datetime import datetime
 
 
-# LOCAL_IP = socket.gethostname()
 PATTERN = 'id="all-good"'
 TIMESTAMP = datetime.today().strftime("%Y-%m-%d %h:%M:%S.%s")
 DATAS = ''

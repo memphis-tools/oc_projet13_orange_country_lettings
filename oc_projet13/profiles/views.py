@@ -1,11 +1,9 @@
 from django.shortcuts import render
 import logtail_handler
 from .models import Profile
-import socket
 
 
 LOGGER = logtail_handler.logger
-LOCAL_IP = socket.gethostbyname(socket.gethostname())
 
 def index(request):
     """
@@ -17,11 +15,11 @@ def index(request):
 
     index: Return the template named profiles/index.html
 
-    
+
     """
     try:
         profiles_list = Profile.objects.all()
-        context = {"profiles_list": profiles_list, "user_ip": LOCAL_IP}
+        context = {"profiles_list": profiles_list}
         return render(request, "profiles/index.html", context)
     except Exception:
         message = f"Error - Page'profiles/index.html' not found"
