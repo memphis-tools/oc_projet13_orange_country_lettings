@@ -37,7 +37,7 @@ def profile(request, username):
     """
     try:
         profile = Profile.objects.get(user__username=username)
-        context = {"profile": profile, "user_ip": LOCAL_IP}
+        context = {"profile": profile}
         return render(request, "profiles/profile.html", context)
     except Exception:
         message = f"Error - Username {username} not found"
