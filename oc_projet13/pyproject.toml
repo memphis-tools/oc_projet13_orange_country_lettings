@@ -1,0 +1,7 @@
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lettings", "profile"]
+
+[project]
+name = 'oc_projet13'
+version = "1.0.0"
