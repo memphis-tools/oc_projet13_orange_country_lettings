@@ -7,10 +7,18 @@ import socket
 LOGGER = logtail_handler.logger
 LOCAL_IP = socket.gethostbyname(socket.gethostname())
 
-
 def index(request):
-    """Return the template named profiles/index.html
-    which is the index for profiles sub-application."""
+    """
+    Return the template named profiles/index.html
+    which is the index for profiles sub-application.
+
+    Returns
+    -------
+
+    index: Return the template named profiles/index.html
+
+    
+    """
     try:
         profiles_list = Profile.objects.all()
         context = {"profiles_list": profiles_list, "user_ip": LOCAL_IP}
@@ -24,7 +32,7 @@ def profile(request, username):
     """Return the template named profiles/profile.html which is the detail view of profile instance.
 
     Keyword arguments:
-    
+
     request -- default Django object
 
     username -- string, name of user
