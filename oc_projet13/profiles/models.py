@@ -10,6 +10,12 @@ class Profile(models.Model):
 
     The __str__ methods returns a string representation based on 1 attribute:
     username.
+
+    Attributes:
+
+    user -- OneToOneField to bind with an user instance
+
+    favorite_city -- string, the favorite city name
     """
 
     user = models.OneToOneField(

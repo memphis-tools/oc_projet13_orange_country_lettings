@@ -7,7 +7,7 @@ import urllib3
 from datetime import datetime
 
 
-LOCAL_IP = socket.gethostname()
+# LOCAL_IP = socket.gethostname()
 PATTERN = 'id="all-good"'
 TIMESTAMP = datetime.today().strftime("%Y-%m-%d %h:%M:%S.%s")
 DATAS = ''
@@ -22,7 +22,7 @@ try:
     if is_good.group():
         pass
 except Exception:
-    message = f"{LOCAL_IP} sent warning - Lint has to be done"
+    message = f"Warning - Lint has to be done"
     url = 'https://in.logs.betterstack.com'
     betterstack_token = os.getenv('BETTERSTACK_SOURCE_TOKEN')
     headers = {
