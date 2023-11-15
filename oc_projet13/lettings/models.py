@@ -19,7 +19,7 @@ class Address(models.Model):
     state -- string, the state name
 
     zip_code -- int, zipcode
-    
+
     country_iso_code -- string, the country iso code
     """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
