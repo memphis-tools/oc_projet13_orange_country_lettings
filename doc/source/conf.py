@@ -11,10 +11,7 @@ import django
 import sphinx_rtd_theme
 import socket
 
-
-sys.path.insert(0, os.path.abspath("."))
-sys.path.insert(0, os.path.abspath("../"))
-sys.path.insert(0, os.path.abspath("../../"))
+os.chdir("../../oc_projet13/")
 sys.path.insert(0, os.path.abspath("../../oc_projet13/"))
 sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/"))
 sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/models"))
