@@ -11,15 +11,15 @@ import django
 import sphinx_rtd_theme
 import socket
 
-# os.chdir("../../oc_projet13/")
+os.chdir("../../oc_projet13/")
 sys.path.insert(0, os.path.abspath("../../oc_projet13/"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/models"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/views"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/models"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/views"))
-sys.path.insert(0, os.path.abspath("../../oc_projet13/oc_lettings_site"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/models"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/lettings/views"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/models"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/profiles/views"))
+# sys.path.insert(0, os.path.abspath("../../oc_projet13/oc_lettings_site"))
 os.environ["DJANGO_SETTINGS_MODULE"] = "oc_lettings_site.settings"
 os.environ["DJANGO_ALLOWED_HOSTS"] = "localhost"
 os.environ["SECRET_KEY"] = "bebopalula"
