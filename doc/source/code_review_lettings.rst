@@ -12,12 +12,14 @@ Lettings Models
    :show-inheritance:
    :private-members:
    :inherited-members:
+   :special-members:
 
 .. autoclass:: Letting
    :members:
    :show-inheritance:
    :private-members:
    :inherited-members:
+   :special-members:
 
 Lettings
 --------
