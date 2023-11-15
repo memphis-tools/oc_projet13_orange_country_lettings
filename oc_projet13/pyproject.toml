@@ -1,6 +1,6 @@
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["lettings", "profile","oc_lettings_site"]
+where = ["./oc_projet13"]
+# include = ["lettings", "profile","oc_lettings_site"]
 
 [project]
 name = 'oc_projet13'
