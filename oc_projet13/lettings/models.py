@@ -18,7 +18,7 @@ class Address(models.Model):
 
     state -- string, the state name.
 
-    zip_code -- int, zipcode.
+    zip_code -- int, a zipcode.
 
     country_iso_code -- string, the country iso code.
     """
