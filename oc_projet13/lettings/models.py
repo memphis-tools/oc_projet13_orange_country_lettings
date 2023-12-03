@@ -10,17 +10,17 @@ class Address(models.Model):
 
     Attributes:
 
-    number -- int, the number of street
+    number -- int, the number of street.
 
-    street -- string, the street name
+    street -- string, the street name.
 
-    city -- string, the city name
+    city -- string, the city name.
 
-    state -- string, the state name
+    state -- string, the state name.
 
-    zip_code -- int, zipcode
+    zip_code -- int, zipcode.
 
-    country_iso_code -- string, the country iso code
+    country_iso_code -- string, the country iso code.
     """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)

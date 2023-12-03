@@ -13,9 +13,9 @@ class Profile(models.Model):
 
     Attributes:
 
-    user -- OneToOneField to bind with an user instance
+    user -- OneToOneField to bind with an user instance.
 
-    favorite_city -- string, the favorite city name
+    favorite_city -- string, the favorite city name.
     """
 
     user = models.OneToOneField(
