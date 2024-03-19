@@ -13,7 +13,9 @@
 
 ## Résumé
 
-Site web d'Orange County Lettings
+Site web d'Orange County Lettings - LA DROPLET (VM) DIGITALOCEAN EST DETRUITE, C'EST POURQUOI LE CIRCLE-CI RENVOIT UN ECHEC (MAIS IL EST BIEN FONCTIONNEL)
+
+DIGITAL OCEAN DROPLET'S RELATED TO THE PROJECT HAVE BEEN DESTROYED THAT'S WHY THE CIRCLE-CI IS FAILED
 
 ![Orange Country Lettings](orange_country_lettings.png)
 
