@@ -39,7 +39,7 @@ workflows:
 jobs:
   test:
     docker:
-      - image: cimg/python:3.10.5
+      - image: cimg/python:3.12.3
     steps:
       - checkout
       - python/install-packages:
@@ -56,7 +56,7 @@ jobs:
           path: htmlcov
   lint:
     docker:
-      - image: cimg/python:3.10.5
+      - image: cimg/python:3.12.3
     steps:
       - checkout
       - python/install-packages:
@@ -71,7 +71,7 @@ jobs:
 
   build_and_publish:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: docker:25.0.3-ce-git
     steps:
       - checkout
       - setup_remote_docker
@@ -84,7 +84,7 @@ jobs:
               py-pip=9.0.0-r1 \
               curl
             pip install \
-              docker-compose==1.12.0
+              docker-compose==2.24.5
       - run:
           name: login to docker_hub
           command: docker login -u memphistools --password $HUB_PASSWORD
@@ -105,7 +105,7 @@ jobs:
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web_<<pipeline.git.revision>>
   deploy:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: docker:25.0.3-ce-git
     steps:
       - checkout
       - setup_remote_docker
