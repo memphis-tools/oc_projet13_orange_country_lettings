@@ -71,17 +71,18 @@ jobs:
 
   build_and_publish:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: cimg/base:2022.06
     steps:
       - checkout
       - setup_remote_docker
+          version: default
       - run:
           name: Install dependencies
           command: |
             apk update && \
             apk upgrade && \
             apk add --no-cache \
-              py-pip=9.0.0-r1 \
+              py-pip \
               curl
             pip install \
               docker-compose
@@ -105,10 +106,11 @@ jobs:
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web_<<pipeline.git.revision>>
   deploy:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: cimg/base:2022.06
     steps:
       - checkout
       - setup_remote_docker
+          version: default
       - run:
           name: Install dependencies
           command: |
