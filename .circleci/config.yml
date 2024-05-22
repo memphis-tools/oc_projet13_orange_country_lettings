@@ -84,7 +84,7 @@ jobs:
               py-pip=9.0.0-r1 \
               curl
             pip install \
-              docker-compose==1.12.0
+              docker-compose
       - run:
           name: login to docker_hub
           command: docker login -u memphistools --password $HUB_PASSWORD
