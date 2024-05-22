@@ -83,8 +83,7 @@ jobs:
             apk upgrade && \
             apk add --no-cache \
               py-pip \
-              curl
-            pip install \
+              curl \
               docker-compose
       - run:
           name: login to docker_hub
