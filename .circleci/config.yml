@@ -71,7 +71,7 @@ jobs:
 
   build_and_publish:
     docker:
-      - image: docker:latest
+      - image: docker:25.0
     steps:
       - checkout
       - setup_remote_docker:
@@ -106,7 +106,7 @@ jobs:
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web_<<pipeline.git.revision>>
   deploy:
     docker:
-      - image: docker:latest
+      - image: docker:25.0
     steps:
       - checkout
       - setup_remote_docker:
