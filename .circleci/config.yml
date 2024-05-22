@@ -39,7 +39,7 @@ workflows:
 jobs:
   test:
     docker:
-      - image: cimg/python:3.10.5
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - python/install-packages:
@@ -71,7 +71,7 @@ jobs:
 
   build_and_publish:
     docker:
-      - image: cimg/base:2022.06
+      - image: docker:latest
     steps:
       - checkout
       - setup_remote_docker:
@@ -106,7 +106,7 @@ jobs:
           command: docker push memphistools/public_repo:oc_projet13_orange_country_lettings_web_<<pipeline.git.revision>>
   deploy:
     docker:
-      - image: cimg/base:2022.06
+      - image: docker:latest
     steps:
       - checkout
       - setup_remote_docker:
